@@ -1,0 +1,7 @@
+{
+ "conjuntos":[{"id":"con1","nombre":"Set Rojo","subtitulo":"Buzo + jogging","descripcionCorta":"Set de algodón premium","descripcion":"Conjunto de buzo con capucha y jogging, frisa suave.","categoria":"conjuntos","subcategoria":"Deportiva","marca":"Mi Marca","modelo":"SR-01","genero":"unisex","estado":"Publicado","fechaPublicacion":"2026-10-01","colores":["Rojo"],"talles":["S","M","L","XL"],"stock":{"S":2,"M":3,"L":0,"XL":1},"precio":75000,"cuotas":{"tiene":true,"cantidad":3,"detalle":"3 cuotas sin interés"},"fotos":["con1-1.jpg"]}],
+ "remeras":[{"id":"rem1","nombre":"Remera Manchada","subtitulo":"Estampada","descripcionCorta":"Algodón peinado","descripcion":"Remera de corte oversize con estampa.","categoria":"remeras","subcategoria":"Oversize","marca":"Mi Marca","modelo":"RM-01","genero":"hombre","estado":"Publicado","fechaPublicacion":"2026-10-01","colores":["Negro","Blanco"],"talles":["M","L","XL","XXL"],"stock":{"M":4,"L":4,"XL":2,"XXL":1},"precio":25000,"cuotas":{"tiene":false,"cantidad":0,"detalle":""},"fotos":["rem1-1.jpg"]}],
+ "shorts":[],
+ "buzos":[],
+ "pantalones":[{"id":"pan1","nombre":"Jogging Negro","subtitulo":"Con puño","descripcionCorta":"Frisa liviana","descripcion":"Jogging recto con logo bordado.","categoria":"pantalones","subcategoria":"Deportiva","marca":"Mi Marca","modelo":"JG-01","genero":"unisex","estado":"Publicado","fechaPublicacion":"2026-10-01","colores":["Negro"],"talles":["S","M","L","XL"],"stock":{"S":3,"M":3,"L":3,"XL":3},"precio":35000,"cuotas":{"tiene":false,"cantidad":0,"detalle":""},"fotos":["pan1-1.jpg"]}]
+}
