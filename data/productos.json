@@ -28,7 +28,7 @@
         "L": 0,
         "XL": 1
       },
-      "precio": 75000,
+      "precio": 10000,
       "cuotas": {
         "tiene": true,
         "cantidad": 3,
