@@ -1,5 +1,3 @@
-@import url("../assets/base.css");
-
 .lay {
     display: grid;
     grid-template-columns: 220px 1fr;
