@@ -11,9 +11,9 @@ const sz=p=>p.talles.filter(t=>!p.stock||p.stock[t]!==0);
 let cart=[],all=[];
 try{cart=JSON.parse(localStorage.getItem("carrito"))||[]}catch(e){}
 const save=()=>{try{localStorage.setItem("carrito",JSON.stringify(cart))}catch(e){}draw()};
-const nav=[["Inicio","index.html"],["Productos","productos/productos.html"],["Contacto","contacto/contacto.html"],["Quiénes somos","quienes-somos/quienes-somos.html"],["Preguntas frecuentes","preguntas-frecuentes/preguntas-frecuentes.html"],["Guía de talles","guia-de-talles/guia-de-talles.html"]];
-$("#h").innerHTML=`<div class="top"><form action="${R}productos/productos.html"><input name="q" placeholder="Buscar productos" aria-label="Buscar"><button aria-label="Buscar">🔍</button></form><a href="${R}index.html"><img src="${R}logo.png" alt="Logo"></a><button id="cb">🛒 <span id="cn">0</span></button></div><nav>${nav.map(n=>`<a href="${R+n[1]}">${n[0]}</a>`).join("")}</nav>`;
-$("#f").innerHTML=`<div class="fg"><div><h4>NAVEGACIÓN</h4>${nav.map(n=>`<a href="${R+n[1]}">${n[0]}</a>`).join("")}</div>
+const nav=[["Inicio",""],["Productos","productos/"],["Contacto","contacto/"],["Quiénes somos","quienes-somos/"],["Preguntas frecuentes","preguntas-frecuentes/"],["Guía de talles","guia-de-talles/"]];
+$("#h").innerHTML=`<div class="top"><form action="${R}productos/"><input name="q" placeholder="Buscar productos" aria-label="Buscar"><button aria-label="Buscar">🔍</button></form><a href="${R||"./"}"><img src="${R}logo.png" alt="Logo"></a><button id="cb">🛒 <span id="cn">0</span></button></div><nav>${nav.map(n=>`<a href="${R+n[1]||"./"}">${n[0]}</a>`).join("")}</nav>`;
+$("#f").innerHTML=`<div class="fg"><div><h4>NAVEGACIÓN</h4>${nav.map(n=>`<a href="${R+n[1]||"./"}">${n[0]}</a>`).join("")}</div>
 <div><h4>MEDIOS DE PAGO</h4><p>Visa, Mastercard, American Express, Naranja, Cabal, tarjetas de débito, transferencia y efectivo.</p></div>
 <div><h4>CONTACTO</h4><a href="${wa("Hola, quiero hacer una consulta")}">WhatsApp</a><a href="mailto:${C.mail}">${C.mail}</a><a href="${C.maps}">Ubicación</a></div>
 <div><h4>REDES</h4><a href="${C.ig}">Instagram</a><a href="${C.fb}">Facebook</a><a href="${C.tt}">TikTok</a></div></div>`;
@@ -39,7 +39,7 @@ async function load(){
  for(const u of [C.json,R+C.local]){try{const r=await fetch(u,{cache:"no-cache"});if(r.ok){all=Object.values(await r.json()).flat().filter(p=>p.estado==="Publicado");return all}}catch(e){}}
  return all}
 const opt=a=>a.map(v=>`<option>${v}</option>`).join("");
-const pu=p=>`${R}producto/producto.html?id=${p.id}`;
+const pu=p=>`${R}producto/?id=${p.id}`;
 const img=(f,a)=>`<img src="${foto(f)}" alt="${a}" width="600" height="800" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${R}logo.png'">`;
 const card=p=>`<article class="card" data-id="${p.id}"><a href="${pu(p)}">${img(p.fotos&&p.fotos[0],p.nombre)}<h3>${p.nombre}</h3></a><p class="sub">${p.descripcionCorta||""}</p><b>${money(p.precio)}</b>${p.cuotas&&p.cuotas.tiene?`<small>${p.cuotas.detalle||""}</small>`:""}<div class="sel"><select class="t" aria-label="Talle">${opt(sz(p))}</select><select class="c" aria-label="Color">${opt(cols(p))}</select></div><button data-a="add">Agregar al carrito</button><button class="alt" data-a="wa">Pedir por WhatsApp</button></article>`;
 window.T={load,card,sz,cols,img,add,line,money,wa};

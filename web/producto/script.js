@@ -1,6 +1,6 @@
 (async()=>{
 const $=s=>document.querySelector(s),id=new URLSearchParams(location.search).get("id"),ps=await T.load(),p=ps.find(x=>x.id===id);
-if(!p){$("#pd").innerHTML=`<p>No encontramos este producto. <a href="../productos/productos.html">Ver todos los productos</a></p>`;$("#rh").hidden=true;return}
+if(!p){$("#pd").innerHTML=`<p>No encontramos este producto. <a href="../productos/">Ver todos los productos</a></p>`;$("#rh").hidden=true;return}
 document.title=p.nombre;
 const fs=[...new Map((p.fotos||[]).map(f=>[String(f).split("/").pop().toLowerCase(),f])).values()];if(!fs.length)fs.push(null);const big=i=>T.img(fs[i],p.nombre).replace('loading="lazy"','fetchpriority="high"');
 const esc=s=>String(s||"").trim().replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\r/g,"");const op=a=>a.map(v=>`<option>${v}</option>`).join("");
