@@ -2,134 +2,6 @@
   "conjuntos": [],
   "remeras": [
     {
-      "id": "rem1",
-      "nombre": "REMERA HUGO BOSS",
-      "subtitulo": "",
-      "descripcionCorta": "",
-      "descripcion": "🇮🇹 ¡Comprá en ITALIA INDUMENTARIA con confianza!\n\nEn ITALIA INDUMENTARIA trabajamos para ofrecerte prendas con estilo, comodidad y una excelente relación entre calidad y precio. Seleccionamos nuestra indumentaria pensando en quienes buscan vestirse bien y conseguir productos que valgan la pena.\n\n👕 Calidad y comodidad en cada prenda\n\nNuestras remeras están confeccionadas en **algodón peinado 24.1**, una tela elegida por su suavidad, comodidad y buena terminación.\n\n¿Qué las hace especiales?\n\n- Algodón peinado 24.1: una tela suave al tacto, cómoda y agradable para el uso diario.\n- Buena calidad: prendas con una terminación cuidada y una textura confortable.\n- Resistencia: con los cuidados adecuados, la tela ayuda a conservar su forma y apariencia.\n- Comodidad y versatilidad: ideales para combinar con distintos estilos y usar en cualquier ocasión.\n\n📌 Cuidado de las prendas: para ayudar a conservar el talle, la forma y el color, recomendamos lavar con agua fría o a baja temperatura, evitar el calor excesivo y seguir las indicaciones de lavado de la etiqueta.\n\n💵 ¡Pagá al recibir tu pedido!\n\nQueremos que tu compra sea sencilla y cómoda. Podés abonar al momento de recibir tu pedido, según la modalidad de entrega acordada.\n\n🚚 Envíos y entregas\n\nContamos con distintas opciones para que recibas tu compra:\n\n- Vía Cargo: para realizar envíos a diferentes destinos.\n- Motomensajería: para coordinar entregas según la zona y la disponibilidad.\n- Puntos de encuentro en Zona Oeste: coordinamos un lugar de entrega para que puedas retirar tu pedido personalmente.\n\nConsultanos por los costos, los tiempos estimados y las opciones disponibles para tu ubicación.\n\n📦 Antes de realizar tu compra\n\nTe recomendamos consultar previamente los talles, colores, modelos y disponibilidad de las prendas para elegir la opción que mejor se adapte a vos.\n\nPor el momento, no ofrecemos devoluciones por cambio de opinión ni una garantía comercial adicional. Esto no limita los derechos que te correspondan por ley en casos como productos defectuosos o compras a distancia.\n\n🇮🇹 ITALIA INDUMENTARIA\n\nPrendas para tu día a día, comodidad y estilo a un precio accesible.\n\n¡Gracias por confiar en nosotros y elegir ITALIA INDUMENTARIA!",
-      "categoria": "remeras",
-      "subcategoria": "Básica",
-      "marca": "HUGO BOSS",
-      "modelo": "",
-      "genero": "unisex",
-      "estado": "Publicado",
-      "fechaPublicacion": "2026-10-22",
-      "colores": [
-        "Blanca"
-      ],
-      "talles": [
-        "S"
-      ],
-      "stock": {
-        "S": 1
-      },
-      "precio": 15000,
-      "cuotas": {
-        "tiene": false,
-        "cantidad": 1,
-        "detalle": ""
-      },
-      "fotos": [
-        "rem1-1.png"
-      ]
-    },
-    {
-      "id": "rem2",
-      "nombre": "REMERA JORDAN",
-      "subtitulo": "",
-      "descripcionCorta": "",
-      "descripcion": "🇮🇹 ¡Comprá en ITALIA INDUMENTARIA con confianza!\n\nEn ITALIA INDUMENTARIA trabajamos para ofrecerte prendas con estilo, comodidad y una excelente relación entre calidad y precio. Seleccionamos nuestra indumentaria pensando en quienes buscan vestirse bien y conseguir productos que valgan la pena.\n\n👕 Calidad y comodidad en cada prenda\n\nNuestras remeras están confeccionadas en algodón peinado 24.1, una tela elegida por su suavidad, comodidad y buena terminación.\n\n¿Qué las hace especiales?\n\n- Algodón peinado 24.1: una tela suave al tacto, cómoda y agradable para el uso diario.\n- Buena calidad: prendas con una terminación cuidada y una textura confortable.\n- Resistencia: con los cuidados adecuados, la tela ayuda a conservar su forma y apariencia.\n- Comodidad y versatilidad: ideales para combinar con distintos estilos y usar en cualquier ocasión.\n\n📌 Cuidado de las prendas: para ayudar a conservar el talle, la forma y el color, recomendamos lavar con agua fría o a baja temperatura, evitar el calor excesivo y seguir las indicaciones de lavado de la etiqueta.\n\n💵 ¡Pagá al recibir tu pedido!\n\nQueremos que tu compra sea sencilla y cómoda. Podés abonar al momento de recibir tu pedido, según la modalidad de entrega acordada.\n\n🚚 Envíos y entregas\n\nContamos con distintas opciones para que recibas tu compra:\n\n- Vía Cargo: para realizar envíos a diferentes destinos.\n- Motomensajería: para coordinar entregas según la zona y la disponibilidad.\n- Puntos de encuentro en Zona Oeste: coordinamos un lugar de entrega para que puedas retirar tu pedido personalmente.\n\nConsultanos por los costos, los tiempos estimados y las opciones disponibles para tu ubicación.\n\n📦 Antes de realizar tu compra\n\nTe recomendamos consultar previamente los talles, colores, modelos y disponibilidad de las prendas para elegir la opción que mejor se adapte a vos.\n\nPor el momento, no ofrecemos devoluciones por cambio de opinión ni una garantía comercial adicional. Esto no limita los derechos que te correspondan por ley en casos como productos defectuosos o compras a distancia.\n\n🇮🇹 ITALIA INDUMENTARIA\n\nPrendas para tu día a día, comodidad y estilo a un precio accesible.\n\n¡Gracias por confiar en nosotros y elegir ITALIA INDUMENTARIA!",
-      "categoria": "remeras",
-      "subcategoria": "Básica",
-      "marca": "JORDAN",
-      "modelo": "",
-      "genero": "unisex",
-      "estado": "Publicado",
-      "fechaPublicacion": "2026-10-22",
-      "colores": [
-        "Blanca"
-      ],
-      "talles": [
-        "M"
-      ],
-      "stock": {
-        "M": 1
-      },
-      "precio": 15000,
-      "cuotas": {
-        "tiene": false,
-        "cantidad": 0,
-        "detalle": ""
-      },
-      "fotos": [
-        "rem2-1.png"
-      ]
-    },
-    {
-      "id": "rem3",
-      "nombre": "REMERA JORDAN",
-      "subtitulo": "",
-      "descripcionCorta": "",
-      "descripcion": "🇮🇹 ¡Comprá en ITALIA INDUMENTARIA con confianza!\n\nEn ITALIA INDUMENTARIA trabajamos para ofrecerte prendas con estilo, comodidad y una excelente relación entre calidad y precio. Seleccionamos nuestra indumentaria pensando en quienes buscan vestirse bien y conseguir productos que valgan la pena.\n\n👕 Calidad y comodidad en cada prenda\n\nNuestras remeras están confeccionadas en algodón peinado 24.1, una tela elegida por su suavidad, comodidad y buena terminación.\n\n¿Qué las hace especiales?\n\n- Algodón peinado 24.1: una tela suave al tacto, cómoda y agradable para el uso diario.\n- Buena calidad: prendas con una terminación cuidada y una textura confortable.\n- Resistencia: con los cuidados adecuados, la tela ayuda a conservar su forma y apariencia.\n- Comodidad y versatilidad: ideales para combinar con distintos estilos y usar en cualquier ocasión.\n\n📌 Cuidado de las prendas: para ayudar a conservar el talle, la forma y el color, recomendamos lavar con agua fría o a baja temperatura, evitar el calor excesivo y seguir las indicaciones de lavado de la etiqueta.\n\n💵 ¡Pagá al recibir tu pedido!\n\nQueremos que tu compra sea sencilla y cómoda. Podés abonar al momento de recibir tu pedido, según la modalidad de entrega acordada.\n\n🚚 Envíos y entregas\n\nContamos con distintas opciones para que recibas tu compra:\n\n- Vía Cargo: para realizar envíos a diferentes destinos.\n- Motomensajería: para coordinar entregas según la zona y la disponibilidad.\n- Puntos de encuentro en Zona Oeste: coordinamos un lugar de entrega para que puedas retirar tu pedido personalmente.\n\nConsultanos por los costos, los tiempos estimados y las opciones disponibles para tu ubicación.\n\n📦 Antes de realizar tu compra\n\nTe recomendamos consultar previamente los talles, colores, modelos y disponibilidad de las prendas para elegir la opción que mejor se adapte a vos.\n\nPor el momento, no ofrecemos devoluciones por cambio de opinión ni una garantía comercial adicional. Esto no limita los derechos que te correspondan por ley en casos como productos defectuosos o compras a distancia.\n\n🇮🇹 ITALIA INDUMENTARIA\n\nPrendas para tu día a día, comodidad y estilo a un precio accesible.\n\n¡Gracias por confiar en nosotros y elegir ITALIA INDUMENTARIA!",
-      "categoria": "remeras",
-      "subcategoria": "Básica",
-      "marca": "JORDAN",
-      "modelo": "",
-      "genero": "unisex",
-      "estado": "Publicado",
-      "fechaPublicacion": "2026-10-22",
-      "colores": [
-        "Negra"
-      ],
-      "talles": [
-        "XL"
-      ],
-      "stock": {
-        "XL": 1
-      },
-      "precio": 15000,
-      "cuotas": {
-        "tiene": false,
-        "cantidad": 0,
-        "detalle": ""
-      },
-      "fotos": [
-        "rem3-1.png"
-      ]
-    },
-    {
-      "id": "rem4",
-      "nombre": "REMERA JORDAN 23",
-      "subtitulo": "",
-      "descripcionCorta": "",
-      "descripcion": "🇮🇹 ¡Comprá en ITALIA INDUMENTARIA con confianza!\n\nEn ITALIA INDUMENTARIA trabajamos para ofrecerte prendas con estilo, comodidad y una excelente relación entre calidad y precio. Seleccionamos nuestra indumentaria pensando en quienes buscan vestirse bien y conseguir productos que valgan la pena.\n\n👕 Calidad y comodidad en cada prenda\n\nNuestras remeras están confeccionadas en algodón peinado 24.1, una tela elegida por su suavidad, comodidad y buena terminación.\n\n¿Qué las hace especiales?\n\n- Algodón peinado 24.1: una tela suave al tacto, cómoda y agradable para el uso diario.\n- Buena calidad: prendas con una terminación cuidada y una textura confortable.\n- Resistencia: con los cuidados adecuados, la tela ayuda a conservar su forma y apariencia.\n- Comodidad y versatilidad: ideales para combinar con distintos estilos y usar en cualquier ocasión.\n\n📌 Cuidado de las prendas: para ayudar a conservar el talle, la forma y el color, recomendamos lavar con agua fría o a baja temperatura, evitar el calor excesivo y seguir las indicaciones de lavado de la etiqueta.\n\n💵 ¡Pagá al recibir tu pedido!\n\nQueremos que tu compra sea sencilla y cómoda. Podés abonar al momento de recibir tu pedido, según la modalidad de entrega acordada.\n\n🚚 Envíos y entregas\n\nContamos con distintas opciones para que recibas tu compra:\n\n- Vía Cargo: para realizar envíos a diferentes destinos.\n- Motomensajería: para coordinar entregas según la zona y la disponibilidad.\n- Puntos de encuentro en Zona Oeste: coordinamos un lugar de entrega para que puedas retirar tu pedido personalmente.\n\nConsultanos por los costos, los tiempos estimados y las opciones disponibles para tu ubicación.\n\n📦 Antes de realizar tu compra\n\nTe recomendamos consultar previamente los talles, colores, modelos y disponibilidad de las prendas para elegir la opción que mejor se adapte a vos.\n\nPor el momento, no ofrecemos devoluciones por cambio de opinión ni una garantía comercial adicional. Esto no limita los derechos que te correspondan por ley en casos como productos defectuosos o compras a distancia.\n\n🇮🇹 ITALIA INDUMENTARIA\n\nPrendas para tu día a día, comodidad y estilo a un precio accesible.\n\n¡Gracias por confiar en nosotros y elegir ITALIA INDUMENTARIA!",
-      "categoria": "remeras",
-      "subcategoria": "",
-      "marca": "JORDAN",
-      "modelo": "",
-      "genero": "unisex",
-      "estado": "Publicado",
-      "fechaPublicacion": "2026-10-22",
-      "colores": [
-        "Negra"
-      ],
-      "talles": [
-        "M"
-      ],
-      "stock": {
-        "M": 1
-      },
-      "precio": 15000,
-      "cuotas": {
-        "tiene": false,
-        "cantidad": 0,
-        "detalle": ""
-      },
-      "fotos": [
-        "rem4-1.png"
-      ]
-    },
-    {
       "id": "rem5",
       "nombre": "REMERA FLIGHT",
       "subtitulo": "",
@@ -160,6 +32,128 @@
       "fotos": [
         "rem5-1.webp"
       ]
+    },
+    {
+      "id": "rem1",
+      "nombre": "REMERA HUGO BOSS",
+      "subtitulo": "",
+      "descripcionCorta": "",
+      "descripcion": "🇮🇹 ¡Comprá en ITALIA INDUMENTARIA con confianza!\n\nEn ITALIA INDUMENTARIA trabajamos para ofrecerte prendas con estilo, comodidad y una excelente relación entre calidad y precio. Seleccionamos nuestra indumentaria pensando en quienes buscan vestirse bien y conseguir productos que valgan la pena.\n\n👕 Calidad y comodidad en cada prenda\n\nNuestras remeras están confeccionadas en **algodón peinado 24.1**, una tela elegida por su suavidad, comodidad y buena terminación.\n\n¿Qué las hace especiales?\n\n- Algodón peinado 24.1: una tela suave al tacto, cómoda y agradable para el uso diario.\n- Buena calidad: prendas con una terminación cuidada y una textura confortable.\n- Resistencia: con los cuidados adecuados, la tela ayuda a conservar su forma y apariencia.\n- Comodidad y versatilidad: ideales para combinar con distintos estilos y usar en cualquier ocasión.\n\n📌 Cuidado de las prendas: para ayudar a conservar el talle, la forma y el color, recomendamos lavar con agua fría o a baja temperatura, evitar el calor excesivo y seguir las indicaciones de lavado de la etiqueta.\n\n💵 ¡Pagá al recibir tu pedido!\n\nQueremos que tu compra sea sencilla y cómoda. Podés abonar al momento de recibir tu pedido, según la modalidad de entrega acordada.\n\n🚚 Envíos y entregas\n\nContamos con distintas opciones para que recibas tu compra:\n\n- Vía Cargo: para realizar envíos a diferentes destinos.\n- Motomensajería: para coordinar entregas según la zona y la disponibilidad.\n- Puntos de encuentro en Zona Oeste: coordinamos un lugar de entrega para que puedas retirar tu pedido personalmente.\n\nConsultanos por los costos, los tiempos estimados y las opciones disponibles para tu ubicación.\n\n📦 Antes de realizar tu compra\n\nTe recomendamos consultar previamente los talles, colores, modelos y disponibilidad de las prendas para elegir la opción que mejor se adapte a vos.\n\nPor el momento, no ofrecemos devoluciones por cambio de opinión ni una garantía comercial adicional. Esto no limita los derechos que te correspondan por ley en casos como productos defectuosos o compras a distancia.\n\n🇮🇹 ITALIA INDUMENTARIA\n\nPrendas para tu día a día, comodidad y estilo a un precio accesible.\n\n¡Gracias por confiar en nosotros y elegir ITALIA INDUMENTARIA!",
+      "categoria": "remeras",
+      "subcategoria": "Básica",
+      "marca": "HUGO BOSS",
+      "modelo": "",
+      "genero": "unisex",
+      "estado": "Publicado",
+      "fechaPublicacion": "2026-10-22",
+      "colores": [
+        "Blanca"
+      ],
+      "talles": [
+        "S"
+      ],
+      "stock": {
+        "S": 1
+      },
+      "precio": 15000,
+      "cuotas": {
+        "tiene": false,
+        "cantidad": 1,
+        "detalle": ""
+      },
+      "fotos": []
+    },
+    {
+      "id": "rem3",
+      "nombre": "REMERA JORDAN",
+      "subtitulo": "",
+      "descripcionCorta": "",
+      "descripcion": "🇮🇹 ¡Comprá en ITALIA INDUMENTARIA con confianza!\n\nEn ITALIA INDUMENTARIA trabajamos para ofrecerte prendas con estilo, comodidad y una excelente relación entre calidad y precio. Seleccionamos nuestra indumentaria pensando en quienes buscan vestirse bien y conseguir productos que valgan la pena.\n\n👕 Calidad y comodidad en cada prenda\n\nNuestras remeras están confeccionadas en algodón peinado 24.1, una tela elegida por su suavidad, comodidad y buena terminación.\n\n¿Qué las hace especiales?\n\n- Algodón peinado 24.1: una tela suave al tacto, cómoda y agradable para el uso diario.\n- Buena calidad: prendas con una terminación cuidada y una textura confortable.\n- Resistencia: con los cuidados adecuados, la tela ayuda a conservar su forma y apariencia.\n- Comodidad y versatilidad: ideales para combinar con distintos estilos y usar en cualquier ocasión.\n\n📌 Cuidado de las prendas: para ayudar a conservar el talle, la forma y el color, recomendamos lavar con agua fría o a baja temperatura, evitar el calor excesivo y seguir las indicaciones de lavado de la etiqueta.\n\n💵 ¡Pagá al recibir tu pedido!\n\nQueremos que tu compra sea sencilla y cómoda. Podés abonar al momento de recibir tu pedido, según la modalidad de entrega acordada.\n\n🚚 Envíos y entregas\n\nContamos con distintas opciones para que recibas tu compra:\n\n- Vía Cargo: para realizar envíos a diferentes destinos.\n- Motomensajería: para coordinar entregas según la zona y la disponibilidad.\n- Puntos de encuentro en Zona Oeste: coordinamos un lugar de entrega para que puedas retirar tu pedido personalmente.\n\nConsultanos por los costos, los tiempos estimados y las opciones disponibles para tu ubicación.\n\n📦 Antes de realizar tu compra\n\nTe recomendamos consultar previamente los talles, colores, modelos y disponibilidad de las prendas para elegir la opción que mejor se adapte a vos.\n\nPor el momento, no ofrecemos devoluciones por cambio de opinión ni una garantía comercial adicional. Esto no limita los derechos que te correspondan por ley en casos como productos defectuosos o compras a distancia.\n\n🇮🇹 ITALIA INDUMENTARIA\n\nPrendas para tu día a día, comodidad y estilo a un precio accesible.\n\n¡Gracias por confiar en nosotros y elegir ITALIA INDUMENTARIA!",
+      "categoria": "remeras",
+      "subcategoria": "Básica",
+      "marca": "JORDAN",
+      "modelo": "",
+      "genero": "unisex",
+      "estado": "Publicado",
+      "fechaPublicacion": "2026-10-22",
+      "colores": [
+        "Negra"
+      ],
+      "talles": [
+        "XL"
+      ],
+      "stock": {
+        "XL": 1
+      },
+      "precio": 15000,
+      "cuotas": {
+        "tiene": false,
+        "cantidad": 0,
+        "detalle": ""
+      },
+      "fotos": [
+        "rem3-1.webp"
+      ]
+    },
+    {
+      "id": "rem4",
+      "nombre": "REMERA JORDAN 23",
+      "subtitulo": "",
+      "descripcionCorta": "",
+      "descripcion": "🇮🇹 ¡Comprá en ITALIA INDUMENTARIA con confianza!\n\nEn ITALIA INDUMENTARIA trabajamos para ofrecerte prendas con estilo, comodidad y una excelente relación entre calidad y precio. Seleccionamos nuestra indumentaria pensando en quienes buscan vestirse bien y conseguir productos que valgan la pena.\n\n👕 Calidad y comodidad en cada prenda\n\nNuestras remeras están confeccionadas en algodón peinado 24.1, una tela elegida por su suavidad, comodidad y buena terminación.\n\n¿Qué las hace especiales?\n\n- Algodón peinado 24.1: una tela suave al tacto, cómoda y agradable para el uso diario.\n- Buena calidad: prendas con una terminación cuidada y una textura confortable.\n- Resistencia: con los cuidados adecuados, la tela ayuda a conservar su forma y apariencia.\n- Comodidad y versatilidad: ideales para combinar con distintos estilos y usar en cualquier ocasión.\n\n📌 Cuidado de las prendas: para ayudar a conservar el talle, la forma y el color, recomendamos lavar con agua fría o a baja temperatura, evitar el calor excesivo y seguir las indicaciones de lavado de la etiqueta.\n\n💵 ¡Pagá al recibir tu pedido!\n\nQueremos que tu compra sea sencilla y cómoda. Podés abonar al momento de recibir tu pedido, según la modalidad de entrega acordada.\n\n🚚 Envíos y entregas\n\nContamos con distintas opciones para que recibas tu compra:\n\n- Vía Cargo: para realizar envíos a diferentes destinos.\n- Motomensajería: para coordinar entregas según la zona y la disponibilidad.\n- Puntos de encuentro en Zona Oeste: coordinamos un lugar de entrega para que puedas retirar tu pedido personalmente.\n\nConsultanos por los costos, los tiempos estimados y las opciones disponibles para tu ubicación.\n\n📦 Antes de realizar tu compra\n\nTe recomendamos consultar previamente los talles, colores, modelos y disponibilidad de las prendas para elegir la opción que mejor se adapte a vos.\n\nPor el momento, no ofrecemos devoluciones por cambio de opinión ni una garantía comercial adicional. Esto no limita los derechos que te correspondan por ley en casos como productos defectuosos o compras a distancia.\n\n🇮🇹 ITALIA INDUMENTARIA\n\nPrendas para tu día a día, comodidad y estilo a un precio accesible.\n\n¡Gracias por confiar en nosotros y elegir ITALIA INDUMENTARIA!",
+      "categoria": "remeras",
+      "subcategoria": "",
+      "marca": "JORDAN",
+      "modelo": "",
+      "genero": "unisex",
+      "estado": "Publicado",
+      "fechaPublicacion": "2026-10-22",
+      "colores": [
+        "Negra"
+      ],
+      "talles": [
+        "M"
+      ],
+      "stock": {
+        "M": 1
+      },
+      "precio": 15000,
+      "cuotas": {
+        "tiene": false,
+        "cantidad": 0,
+        "detalle": ""
+      },
+      "fotos": []
+    },
+    {
+      "id": "rem2",
+      "nombre": "REMERA JORDAN",
+      "subtitulo": "",
+      "descripcionCorta": "",
+      "descripcion": "🇮🇹 ¡Comprá en ITALIA INDUMENTARIA con confianza!\n\nEn ITALIA INDUMENTARIA trabajamos para ofrecerte prendas con estilo, comodidad y una excelente relación entre calidad y precio. Seleccionamos nuestra indumentaria pensando en quienes buscan vestirse bien y conseguir productos que valgan la pena.\n\n👕 Calidad y comodidad en cada prenda\n\nNuestras remeras están confeccionadas en algodón peinado 24.1, una tela elegida por su suavidad, comodidad y buena terminación.\n\n¿Qué las hace especiales?\n\n- Algodón peinado 24.1: una tela suave al tacto, cómoda y agradable para el uso diario.\n- Buena calidad: prendas con una terminación cuidada y una textura confortable.\n- Resistencia: con los cuidados adecuados, la tela ayuda a conservar su forma y apariencia.\n- Comodidad y versatilidad: ideales para combinar con distintos estilos y usar en cualquier ocasión.\n\n📌 Cuidado de las prendas: para ayudar a conservar el talle, la forma y el color, recomendamos lavar con agua fría o a baja temperatura, evitar el calor excesivo y seguir las indicaciones de lavado de la etiqueta.\n\n💵 ¡Pagá al recibir tu pedido!\n\nQueremos que tu compra sea sencilla y cómoda. Podés abonar al momento de recibir tu pedido, según la modalidad de entrega acordada.\n\n🚚 Envíos y entregas\n\nContamos con distintas opciones para que recibas tu compra:\n\n- Vía Cargo: para realizar envíos a diferentes destinos.\n- Motomensajería: para coordinar entregas según la zona y la disponibilidad.\n- Puntos de encuentro en Zona Oeste: coordinamos un lugar de entrega para que puedas retirar tu pedido personalmente.\n\nConsultanos por los costos, los tiempos estimados y las opciones disponibles para tu ubicación.\n\n📦 Antes de realizar tu compra\n\nTe recomendamos consultar previamente los talles, colores, modelos y disponibilidad de las prendas para elegir la opción que mejor se adapte a vos.\n\nPor el momento, no ofrecemos devoluciones por cambio de opinión ni una garantía comercial adicional. Esto no limita los derechos que te correspondan por ley en casos como productos defectuosos o compras a distancia.\n\n🇮🇹 ITALIA INDUMENTARIA\n\nPrendas para tu día a día, comodidad y estilo a un precio accesible.\n\n¡Gracias por confiar en nosotros y elegir ITALIA INDUMENTARIA!",
+      "categoria": "remeras",
+      "subcategoria": "Básica",
+      "marca": "JORDAN",
+      "modelo": "",
+      "genero": "unisex",
+      "estado": "Publicado",
+      "fechaPublicacion": "2026-10-22",
+      "colores": [
+        "Blanca"
+      ],
+      "talles": [
+        "M"
+      ],
+      "stock": {
+        "M": 1
+      },
+      "precio": 15000,
+      "cuotas": {
+        "tiene": false,
+        "cantidad": 0,
+        "detalle": ""
+      },
+      "fotos": []
     }
   ],
   "shorts": [],
