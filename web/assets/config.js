@@ -1,7 +1,7 @@
 // Editá estos datos con los tuyos
 window.CONFIG = {
     whatsapp: "5491161612430",
-    json: "https://raw.githubusercontent.com/Flinch101/panel-tienda/refs/heads/main/data/productos.json",
+    json: "https://raw.githubusercontent.com/Flinch101/panel-tienda/refs/heads/main/data/productos.json?v=" + Math.floor(Date.now() / 6e4),
     fotos: "https://cdn.jsdelivr.net/gh/Flinch101/panel-tienda@main/fotos/",
     local: "data/productos.json", // se usa si falla el link de GitHub
     mail: "italiaindumentaria0@gmail.com",
