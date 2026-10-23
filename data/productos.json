@@ -125,7 +125,9 @@
         "cantidad": 0,
         "detalle": ""
       },
-      "fotos": []
+      "fotos": [
+        "rem4-1.png"
+      ]
     }
   ],
   "shorts": [],
