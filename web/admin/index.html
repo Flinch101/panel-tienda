@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Panel de productos</title>
+    <link rel="icon" type="image/png" href="../logo.png">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <header>
+        <h1>Panel de productos</h1>
+        <div><button id="nuevo">Nuevo producto</button> <button id="dl" class="alt">Descargar JSON</button> <button
+                id="pub">Actualizar JSON (commit)</button></div>
+    </header>
+    <main>
+        <p id="msg"></p>
+        <details open>
+            <summary>Conexión con GitHub</summary>
+            <form id="cfg"><label>Usuario<input name="owner" required></label><label>Repositorio<input name="repo"
+                        required></label><label>Rama<input name="branch" required></label><label>Ruta del JSON<input
+                        name="path" required></label><label>Token (permiso Contents: read/write)<input name="token"
+                        type="password" required></label><button>Guardar y cargar</button></form>
+        </details>
+        <input id="s" placeholder="Buscar por nombre o código" oninput="list()">
+        <div class="tw">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tb"></tbody>
+            </table>
+        </div>
+    </main>
+    <dialog id="dlg">
+        <form id="pf">
+            <h2>Producto</h2>
+            <div class="fg">
+                <label>Nombre<input name="nombre" required></label><label>Subtítulo<input name="subtitulo"></label>
+                <label>Descripción corta (junto al precio)<input name="descripcionCorta"></label>
+                <label>Categoría<select name="categoria">
+                        <option>conjuntos</option>
+                        <option>remeras</option>
+                        <option>shorts</option>
+                        <option>buzos</option>
+                        <option>pantalones</option>
+                    </select></label>
+                <label>Subcategoría<input name="subcategoria"
+                        placeholder="Oversize, básica, deportiva…"></label><label>Marca<input
+                        name="marca"></label><label>Modelo<input name="modelo"></label>
+                <label>Género<select name="genero">
+                        <option>hombre</option>
+                        <option>mujer</option>
+                        <option>unisex</option>
+                    </select></label>
+                <label>Estado<select name="estado">
+                        <option>Borrador</option>
+                        <option>Publicado</option>
+                        <option>Oculto</option>
+                    </select></label>
+                <label>Fecha de publicación<input name="fechaPublicacion" type="date"></label>
+                <label>Precio<input name="precio" type="number" min="0" required></label><label>Colores (separados por
+                    coma)<input name="colores"></label>
+            </div>
+            <label>Descripción completa<textarea name="descripcion" rows="3"></textarea></label>
+            <fieldset>
+                <legend>Talles y stock</legend>
+                <div id="sz"></div>
+            </fieldset>
+            <fieldset>
+                <legend>Cuotas</legend><label class="in"><input type="checkbox" name="cuotasTiene"> Tiene cuotas</label>
+                <div class="fg"><label>Cantidad<input name="cuotasCant" type="number"
+                            min="0"></label><label>Detalle<input name="cuotasDet"
+                            placeholder="3 cuotas sin interés"></label></div>
+            </fieldset>
+            <label>Fotos (una por línea: nombre de archivo o URL)<textarea name="fotos" rows="3"></textarea></label>
+            <label>Subir fotos (se achican, se convierten a WebP y se suben al repo)<input type="file" id="up"
+                    accept="image/*" multiple></label>
+            <div class="act"><button type="button" class="alt" onclick="dlg.close()">Cancelar</button><button>Guardar
+                    producto</button></div>
+        </form>
+    </dialog>
+    <script src="admin.js"></script>
+</body>
+
+</html>

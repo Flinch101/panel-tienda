@@ -1,0 +1,11 @@
+@import url("../assets/base.css?v=5");
+.pd{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:40px}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#eee;display:block}
+.th{display:flex;gap:8px;margin-top:8px;overflow:auto}.th button{width:72px;padding:0;border:1px solid #ddd;background:0;cursor:pointer;flex:none}
+.inf label{display:block;margin:12px 0;font-size:.9rem}.inf select,.inf input{padding:8px;border:1px solid #000;font:inherit;width:100%}
+.pr{font-size:1.6rem;font-weight:600}
+.q{display:flex}.q input{text-align:center;width:80px}.q button{width:40px;background:#fff;border:1px solid #000;cursor:pointer}
+.inf .b{margin:6px 6px 6px 0;padding:12px 20px}
+.meta{color:#555;font-size:.85rem;text-transform:capitalize}#st{color:#555;font-size:.85rem}
+@media(max-width:700px){.pd{grid-template-columns:1fr}}
+.desc{white-space:pre-wrap}

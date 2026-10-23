@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/png" href="../logo.png">
+    <title>Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-root="../">
+    <header id="h"></header>
+    <main>
+        <h1>Productos</h1>
+        <div class="lay">
+            <form id="f2">
+                <fieldset>
+                    <legend>Prenda</legend>
+                    <div id="fc"></div>
+                </fieldset>
+                <fieldset>
+                    <legend>Talle</legend>
+                    <div id="ft"></div>
+                </fieldset>
+                <fieldset>
+                    <legend>Color</legend>
+                    <div id="fk"></div>
+                </fieldset>
+                <fieldset>
+                    <legend>Precio</legend><input type="number" name="pmin" min="0" placeholder="Mínimo"><input
+                        type="number" name="pmax" min="0" placeholder="Máximo">
+                </fieldset>
+            </form>
+            <div class="grid" id="g"></div>
+        </div>
+    </main>
+    <footer id="f"></footer>
+    <script src="../assets/config.js"></script>
+    <script src="../assets/common.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

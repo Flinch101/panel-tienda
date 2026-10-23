@@ -1,0 +1,37 @@
+@import url("../assets/base.css");
+
+.lay {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px
+}
+
+fieldset {
+    border: 0;
+    border-top: 1px solid #000;
+    padding: 10px 0;
+    margin-bottom: 8px
+}
+
+legend {
+    font-weight: 600;
+    padding-right: 8px
+}
+
+label {
+    display: block;
+    text-transform: capitalize;
+    font-size: .9rem
+}
+
+#f2 input[type=number] {
+    width: 48%;
+    padding: 6px;
+    border: 1px solid #000
+}
+
+@media(max-width:700px) {
+    .lay {
+        grid-template-columns: 1fr
+    }
+}

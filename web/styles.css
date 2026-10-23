@@ -1,0 +1,10 @@
+@import url("assets/base.css");
+
+.hero {
+    text-align: center;
+    padding: 40px 0
+}
+
+.hero p {
+    color: #555
+}
