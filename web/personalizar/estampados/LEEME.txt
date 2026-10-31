@@ -1,0 +1,6 @@
+Nombre:  COLORES-TIPO-ID-nombre.png
+  COLORES: 1=negro 2=blanco 3=rojo (podés combinar: 123, 12, 3)
+  TIPO:    1=chico al centro, 2=frente completo
+  ID:      número para diferenciarlo
+Ej: 123-1-1-jordannegro.png   12-1-2-flightblanco.png
+Usá PNG con fondo transparente. Después corré generar-lista.py (o .js).

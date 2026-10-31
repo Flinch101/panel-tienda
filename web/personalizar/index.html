@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Página privada: no indexar, no seguir enlaces, no guardar copia ni imágenes -->
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+    <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+    <meta name="referrer" content="no-referrer">
+    <title>Personalizar</title>
+    <link rel="icon" type="image/png" href="../logo.png">
+    <link rel="stylesheet" href="../assets/base.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="top ptop">
+            <span></span>
+            <a href="../"><img src="../logo.png" alt="Logo"></a>
+            <span class="priv">Uso interno</span>
+        </div>
+        <nav><span>Personalizador de remeras</span></nav>
+    </header>
+    <main>
+        <h1>Personalizar remera</h1>
+        <p class="lead">Elegí remera, estampado y fondo. Arrastrá el estampado para moverlo y descargá la imagen en PNG.</p>
+        <div class="pl">
+            <section class="vista">
+                <canvas id="cv" width="1200" height="1600" aria-label="Vista previa"></canvas>
+                <p id="msg" role="status" aria-live="polite"></p>
+            </section>
+            <section class="ctl" id="ui">
+                <div class="grp">
+                    <h2>Remera</h2>
+                    <div class="ths" id="lr"></div>
+                </div>
+                <div class="grp">
+                    <h2>Estampado</h2>
+                    <div class="fil">
+                        <select id="ft" aria-label="Tipo de estampado">
+                            <option value="0">Todos los tipos</option>
+                            <option value="1">Chicos (centro)</option>
+                            <option value="2">Frente completo</option>
+                        </select>
+                        <label><input type="checkbox" id="fa"> Mostrar también los de otros colores</label>
+                    </div>
+                    <div class="ths" id="le"></div>
+                </div>
+                <div class="grp">
+                    <h2>Etiqueta de cuello (grifa)</h2>
+                    <div class="fil">
+                        <select id="mk" aria-label="Marca"></select>
+                        <div class="tls" id="tl" aria-label="Talle"></div>
+                    </div>
+                </div>
+                <div class="grp">
+                    <h2>Tag colgante (cartón)</h2>
+                    <div class="ths" id="lt"></div>
+                </div>
+                <div class="grp">
+                    <h2>Fondo</h2>
+                    <div class="ths" id="lf"></div>
+                </div>
+                <div class="grp aj">
+                    <h2>Ajustes</h2>
+                    <div class="seg" id="ac" role="group" aria-label="Elemento a ajustar">
+                        <button type="button" data-a="est" class="on">Estampado</button>
+                        <button type="button" data-a="eti">Etiqueta</button>
+                        <button type="button" data-a="tag">Tag</button>
+                        <button type="button" data-a="hilo">Hilo</button>
+                    </div>
+                    <p class="ayuda">Tocá un elemento en la imagen para elegirlo, o elegilo acá. Arrastralo para moverlo.</p>
+                    <label>Tamaño <output id="osz"></output><input type="range" id="sz" min="20" max="950" step="5"></label>
+                    <label>Horizontal <output id="opx"></output><input type="range" id="px" min="0" max="1000" step="5"></label>
+                    <label>Vertical <output id="opy"></output><input type="range" id="py" min="0" max="1000" step="5"></label>
+                    <label>Rotación <output id="ort"></output><input type="range" id="rt" min="-180" max="180" step="1"></label>
+                    <div class="bt">
+                        <button type="button" class="alt" id="rs">Reiniciar posición</button>
+                        <button type="button" class="b" id="dl">Descargar PNG</button>
+                    </div>
+                    <p class="nm">Se guarda como: <b id="nm">—</b></p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="fg"><div><h4>PERSONALIZADOR</h4><p>Página privada. No figura en el menú del sitio ni en buscadores.</p></div></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

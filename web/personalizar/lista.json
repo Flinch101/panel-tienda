@@ -1,0 +1,85 @@
+{
+  "remeras": [
+    "blanca.png",
+    "negra.png",
+    "roja.png"
+  ],
+  "estampados": [
+    "1-1-6-corteizblanco.png",
+    "12-1-13-jordanlogo.png",
+    "12-1-2-armani.png",
+    "123-1-1-23.png",
+    "123-1-12-guess.png",
+    "123-1-5-calvin.png",
+    "123-2-18-jordan23.png",
+    "13-1-10-flightblanco.png",
+    "13-1-14-hugoblanco.png",
+    "13-1-17-jordanblanco.png",
+    "13-1-4-bmwblanco.png",
+    "13-1-8-dieselblanco.png",
+    "2-1-11-flightnegro.png",
+    "2-1-15-hugonegro.png",
+    "2-1-16-jordannegro.png",
+    "2-1-3-bmwnegro.png",
+    "2-1-9-dieselnegro.png",
+    "23-1-7-corteiznegro.png"
+  ],
+  "fondo": [
+    "fondo1.png",
+    "fondo2.png"
+  ],
+  "etiquetas": {
+    "armani": [
+      "etiqueta-armani-l.png",
+      "etiqueta-armani-m.png",
+      "etiqueta-armani-s.png",
+      "etiqueta-armani-xl.png"
+    ],
+    "boss": [
+      "etiqueta-boss-l.png",
+      "etiqueta-boss-m.png",
+      "etiqueta-boss-s.png",
+      "etiqueta-boss-xl.png"
+    ],
+    "calvinklein": [
+      "etiqueta-calvinklein-l.png",
+      "etiqueta-calvinklein-m.png",
+      "etiqueta-calvinklein-s.png",
+      "etiqueta-calvinklein-xl.png"
+    ],
+    "diesel": [
+      "etiqueta-diesel-l.png",
+      "etiqueta-diesel-m.png",
+      "etiqueta-diesel-s.png",
+      "etiqueta-diesel-xl.png"
+    ],
+    "guess": [
+      "etiqueta-guess-l.png",
+      "etiqueta-guess-m.png",
+      "etiqueta-guess-s.png",
+      "etiqueta-guess-xl.png"
+    ],
+    "jordan": [
+      "etiqueta-jordan-l.png",
+      "etiqueta-jordan-m.png",
+      "etiqueta-jordan-s.png",
+      "etiqueta-jordan-xl.png"
+    ],
+    "puma": [
+      "etiqueta-puma-l.png",
+      "etiqueta-puma-m.png",
+      "etiqueta-puma-s.png",
+      "etiqueta-puma-xl.png"
+    ]
+  },
+  "tags": [
+    "armani.png",
+    "calvinklein.png",
+    "corteiz.png",
+    "diesel.png",
+    "guess.png",
+    "hugo boss.png",
+    "jordan.png",
+    "puma.png"
+  ]
+}
