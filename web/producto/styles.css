@@ -1,10 +1,44 @@
-.pd{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:40px}
-.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#eee;display:block}
-.th{display:flex;gap:8px;margin-top:8px;overflow:auto}.th button{width:72px;padding:0;border:1px solid #ddd;background:0;cursor:pointer;flex:none}
+.pd{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;margin-bottom:40px;align-items:start}
+.inf{position:sticky;top:16px}
+
+/* ---------- galería ---------- */
+.gal{display:grid;grid-template-columns:78px minmax(0,1fr);gap:12px;align-items:stretch}
+.gal.solo{grid-template-columns:minmax(0,1fr)}
+.gt{position:relative}
+.gi{position:absolute;inset:0;display:flex;flex-direction:column;gap:10px;overflow-y:auto;scrollbar-width:none;padding:2px}
+.gi::-webkit-scrollbar{display:none}
+.gb{flex:none;width:100%;aspect-ratio:3/4;padding:0;border:0;background:#eee;cursor:pointer;opacity:.55;overflow:hidden;transition:opacity .2s,box-shadow .2s}
+.gb img{width:100%;height:100%;object-fit:cover;display:block}
+.gb:hover{opacity:1}
+.gb.on{opacity:1;box-shadow:0 0 0 2px #000}
+.gb:focus-visible,.gv:focus-visible{outline:2px solid #1a73e8;outline-offset:2px}
+.gv{position:relative;overflow:hidden;aspect-ratio:3/4;background:#eee;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.gv.zm{cursor:zoom-in}
+.gv img{width:100%;height:100%;object-fit:cover;display:block;transform-origin:50% 50%;transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .15s;will-change:transform;-webkit-user-drag:none}
+.gv.z img{transform:scale(1.8)}
+.gn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;padding:0;border:0;border-radius:50%;background:#fffe;color:#000;font-size:1.7rem;line-height:1;display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 10px #0003;opacity:0;transition:opacity .2s,background .2s,color .2s}
+.gn:hover{background:#000;color:#fff}
+.gv:hover .gn,.gn:focus-visible{opacity:1}
+.gv.z .gn{opacity:0}
+.prev{left:10px}.next{right:10px}
+.gc{position:absolute;top:10px;right:10px;background:#000a;color:#fff;font-size:.72rem;padding:3px 10px;border-radius:12px;letter-spacing:.05em;pointer-events:none}
+.gh{position:absolute;left:10px;bottom:10px;background:#000a;color:#fff;font-size:.72rem;padding:4px 11px;border-radius:12px;pointer-events:none;animation:ghide .5s 5s forwards}
+.gv.z .gh{display:none}
+.ht{display:none}
+@keyframes ghide{to{opacity:0;visibility:hidden}}
+@media(hover:none){.hm{display:none}.ht{display:inline}.gn{opacity:.92;width:36px;height:36px;font-size:1.4rem}}
+@media(prefers-reduced-motion:reduce){.gv img,.gb,.gn{transition:none}}
+
 .inf label{display:block;margin:12px 0;font-size:.9rem}.inf select,.inf input{padding:8px;border:1px solid #000;font:inherit;width:100%}
 .pr{font-size:1.6rem;font-weight:600}
 .q{display:flex}.q input{text-align:center;width:80px}.q button{width:40px;background:#fff;border:1px solid #000;cursor:pointer}
 .inf .b{margin:6px 6px 6px 0;padding:12px 20px}
 .meta{color:#555;font-size:.85rem;text-transform:capitalize}#st{color:#555;font-size:.85rem}
-@media(max-width:700px){.pd{grid-template-columns:1fr}}
 .desc{white-space:pre-wrap}
+@media(max-width:700px){
+.pd{grid-template-columns:1fr;gap:20px}.inf{position:static}
+.gal{grid-template-columns:minmax(0,1fr);gap:10px}
+.gs{order:1}.gt{order:2}
+.gi{position:relative;inset:auto;flex-direction:row;overflow-x:auto;overflow-y:hidden;padding:3px 2px}
+.gb{width:62px}
+}

@@ -5,69 +5,86 @@
 body {
     margin: 0;
     font-family: Poppins, system-ui, sans-serif;
-    background: #f4f4f4;
-    color: #000
-}
-
-header {
-    background: #000;
-    color: #fff;
-    padding: 14px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.2rem
-}
-
-main {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px
+    background: #fff;
+    color: #202124;
+    font-size: 13px
 }
 
 button {
     background: #000;
     color: #fff;
     border: 1px solid #000;
-    padding: 8px 14px;
+    padding: 7px 12px;
     cursor: pointer;
     font: inherit
 }
 
 button.alt {
     background: #fff;
-    color: #000
+    color: #000;
+    border-color: #c4c7c5
 }
 
-header button {
-    border-color: #fff
-}
-
-header .alt {
-    background: 0;
-    color: #fff
+button.alt:hover {
+    background: #f1f3f4
 }
 
 button.dirty {
     outline: 3px solid #f5c400
 }
 
-details,
-.tw,
-#s {
-    background: #fff;
-    border: 1px solid #ddd;
-    margin-bottom: 16px
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 8px 16px;
+    border-bottom: 1px solid #e2e3e3;
+    background: #fff
+}
+
+.tl {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.tl img {
+    height: 34px
+}
+
+.tl h1 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600
+}
+
+.est {
+    font-size: .75rem;
+    color: #5f6368
+}
+
+.est.dirty {
+    color: #b06000;
+    font-weight: 600
+}
+
+.ac {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap
+}
+
+main {
+    padding: 12px 16px 24px
 }
 
 details {
-    padding: 12px
+    background: #f8f9fa;
+    border: 1px solid #e2e3e3;
+    padding: 10px 12px;
+    margin-bottom: 10px
 }
 
 summary {
@@ -76,10 +93,17 @@ summary {
 }
 
 form label,
-fieldset {
+dialog label {
     display: block;
     font-size: .85rem;
     margin: 8px 0
+}
+
+#cfg {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0 12px;
+    align-items: end
 }
 
 input,
@@ -87,97 +111,236 @@ select,
 textarea {
     display: block;
     width: 100%;
-    padding: 8px;
-    border: 1px solid #000;
+    padding: 7px;
+    border: 1px solid #c4c7c5;
     font: inherit;
     background: #fff
 }
 
-#s {
-    padding: 10px;
-    width: 100%
+.tb {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px
 }
 
-.tw {
-    overflow: auto
+.tb input {
+    max-width: 320px
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse
+.tb select {
+    width: auto
 }
 
-th,
-td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #eee
-}
-
-th {
-    background: #000;
-    color: #fff
-}
-
-.tag {
-    padding: 2px 8px;
-    border: 1px solid #000;
-    font-size: .75rem
-}
-
-.tag.Publicado {
-    background: #000;
-    color: #fff
+.cnt {
+    color: #5f6368;
+    font-size: .8rem;
+    margin-left: auto
 }
 
 #msg {
-    min-height: 1.4em;
+    min-height: 1.3em;
+    margin: 0 0 6px;
     font-weight: 500
 }
 
 #msg.err {
-    color: #c00
+    color: #c5221f
 }
 
+/* ---------- la planilla ---------- */
+.sheet {
+    overflow: auto;
+    height: calc(100vh - 250px);
+    min-height: 380px;
+    border: 1px solid #e2e3e3;
+    scroll-padding-left: 360px;
+    scroll-padding-top: 34px;
+    background: #fff
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed
+}
+
+th,
+td {
+    height: 28px;
+    padding: 0 6px;
+    border-right: 1px solid #e2e3e3;
+    border-bottom: 1px solid #e2e3e3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    background: #fff
+}
+
+th {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: #f8f9fa;
+    font-weight: 500;
+    color: #444746;
+    cursor: pointer;
+    user-select: none
+}
+
+th:hover {
+    background: #eef0f1
+}
+
+td {
+    user-select: none;
+    cursor: cell
+}
+
+.fz {
+    position: sticky;
+    z-index: 2
+}
+
+th.fz {
+    z-index: 4
+}
+
+td.rn,
+th.rn {
+    background: #f8f9fa;
+    color: #5f6368;
+    text-align: center;
+    padding: 0;
+    cursor: default
+}
+
+td.rn:hover {
+    background: #e8eaed
+}
+
+td.n {
+    text-align: right
+}
+
+td.s {
+    text-align: center
+}
+
+td.ns {
+    background: repeating-linear-gradient(45deg, #f6f6f6 0 5px, #fff 5px 10px)
+}
+
+td.z {
+    background: #fde8e8;
+    color: #b3261e;
+    font-weight: 600
+}
+
+td.lo {
+    background: #fff4d6
+}
+
+td.bad {
+    background: #fde8e8;
+    box-shadow: inset 0 0 0 1px #d93025
+}
+
+td.sel {
+    background: #e8f0fe
+}
+
+td.cur {
+    outline: 2px solid #1a73e8;
+    outline-offset: -2px
+}
+
+td.ed {
+    padding: 0;
+    overflow: visible;
+    background: #fff
+}
+
+td.ed input,
+td.ed select {
+    width: 100%;
+    height: 100%;
+    min-height: 26px;
+    border: 0;
+    outline: 2px solid #1a73e8;
+    outline-offset: -2px;
+    padding: 0 6px;
+    user-select: text
+}
+
+td.ax {
+    padding: 0 4px;
+    text-align: center;
+    cursor: default
+}
+
+td.ax button {
+    background: 0;
+    border: 0;
+    color: #5f6368;
+    padding: 2px 5px;
+    font-size: .9rem
+}
+
+td.ax button:hover {
+    color: #000
+}
+
+td.ax button[data-x=del]:hover {
+    color: #c5221f
+}
+
+.mut {
+    color: #9aa0a6
+}
+
+.chip {
+    display: inline-block;
+    padding: 1px 9px;
+    border-radius: 10px;
+    font-size: .75rem;
+    background: #eee
+}
+
+.chip.Publicado {
+    background: #d8f3dc;
+    color: #14532d
+}
+
+.chip.Oculto {
+    background: #fde8e8;
+    color: #8a1c1c
+}
+
+.hint {
+    color: #5f6368;
+    font-size: .78rem;
+    line-height: 1.6;
+    margin: 10px 0 0
+}
+
+/* ---------- ventana de descripción / fotos ---------- */
 dialog {
-    width: min(760px, 95%);
+    width: min(720px, 95%);
     border: 1px solid #000;
-    padding: 20px;
+    padding: 18px;
     max-height: 92vh
+}
+
+dialog h2 {
+    margin: 0 0 6px;
+    font-size: 1.05rem
 }
 
 dialog::backdrop {
     background: #0008
-}
-
-.fg {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0 14px
-}
-
-fieldset {
-    border: 1px solid #ddd
-}
-
-#sz {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px
-}
-
-#sz label {
-    width: 90px
-}
-
-.in {
-    display: flex !important;
-    gap: 6px;
-    align-items: center
-}
-
-.in input {
-    width: auto
 }
 
 .act {
@@ -185,4 +348,30 @@ fieldset {
     justify-content: flex-end;
     gap: 8px;
     margin-top: 12px
+}
+
+.mp {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap
+}
+
+.mp img {
+    width: 64px;
+    height: 80px;
+    object-fit: cover;
+    background: #eee;
+    border: 1px solid #ddd
+}
+
+@media(max-width:900px) {
+
+    .fz:not(.rn),
+    th.fz:not(.rn) {
+        position: static
+    }
+
+    .sheet {
+        scroll-padding-left: 50px
+    }
 }
