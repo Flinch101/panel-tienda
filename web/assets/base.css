@@ -302,3 +302,4 @@ img {
         flex-direction: column
     }
 }
+.card button:disabled{opacity:.35;cursor:not-allowed}

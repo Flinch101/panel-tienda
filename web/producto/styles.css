@@ -29,6 +29,18 @@
 @media(hover:none){.hm{display:none}.ht{display:inline}.gn{opacity:.92;width:36px;height:36px;font-size:1.4rem}}
 @media(prefers-reduced-motion:reduce){.gv img,.gb,.gn{transition:none}}
 
+/* ---------- color y talle ---------- */
+.opt{margin:14px 0}
+.ol{font-size:.85rem;margin-bottom:6px;color:#444}.ol b{color:#000;font-weight:600}
+.pl{display:flex;flex-wrap:wrap;gap:8px}
+.pill{min-width:46px;padding:9px 16px;border:1px solid #bbb;background:#fff;color:#000;font:inherit;font-size:.85rem;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.pill:hover:not(:disabled){border-color:#000}
+.pill.on{background:#000;color:#fff;border-color:#000}
+.pill.ns:not(.on){color:#999;border-style:dashed}
+.pill:disabled{color:#aaa;cursor:not-allowed;background:repeating-linear-gradient(135deg,#fafafa 0 6px,#f0f0f0 6px 12px);text-decoration:line-through}
+.inf .b:disabled{opacity:.35;cursor:not-allowed}
+.mut{color:#888;font-size:.85rem}
+.gk{position:absolute;left:10px;top:10px;background:#fffd;color:#000;font-size:.72rem;padding:3px 10px;border-radius:12px;letter-spacing:.04em;pointer-events:none}
 .inf label{display:block;margin:12px 0;font-size:.9rem}.inf select,.inf input{padding:8px;border:1px solid #000;font:inherit;width:100%}
 .pr{font-size:1.6rem;font-weight:600}
 .q{display:flex}.q input{text-align:center;width:80px}.q button{width:40px;background:#fff;border:1px solid #000;cursor:pointer}

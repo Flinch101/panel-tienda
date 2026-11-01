@@ -375,3 +375,22 @@ dialog::backdrop {
         scroll-padding-left: 50px
     }
 }
+
+/* ---------- variantes (sub-filas por color) ---------- */
+tr.vr td { background: #fafbfc }
+tr.vr td.rn { box-shadow: inset 3px 0 0 #1a73e8; color: #1a73e8; background: #f1f6fe }
+tr.pr td { border-bottom-color: #d3d6d9 }
+tr.pr td:not(.rn):not(.sel) { font-weight: 500 }
+tr.vr td.mu { color: #a8adb2; font-weight: 400; font-size: .75rem }
+tr.vr td.sb { background: #f3f4f5; cursor: default }
+td.der { color: #5f6368; font-style: italic; background: #fbfbfb; cursor: default }
+td.der.ns { background: repeating-linear-gradient(45deg, #f6f6f6 0 5px, #fff 5px 10px) }
+td.cl { font-weight: 600 }
+.mi { margin: 0 0 6px; color: #5f6368; font-size: .85rem }
+.mg { margin-top: 10px; padding: 8px 10px; background: #f8f9fa; border: 1px solid #e2e3e3 }
+.mg p { margin: 0 0 6px; font-size: .8rem; color: #444 }
+.mg .mp button { padding: 0; border: 1px solid #c4c7c5; background: #fff; cursor: pointer }
+.mg .mp button:hover { border-color: #1a73e8; outline: 2px solid #1a73e8 }
+td.ax { white-space: nowrap }
+
+[hidden] { display: none !important }

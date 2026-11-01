@@ -20,7 +20,7 @@
         <div class="ac">
             <button type="button" id="un" class="alt" title="Deshacer (Ctrl+Z)">↶</button>
             <button type="button" id="re" class="alt" title="Rehacer (Ctrl+Y)">↷</button>
-            <button type="button" id="nuevo" class="alt">+ Fila nueva</button>
+            <button type="button" id="nuevo" class="alt">+ Producto nuevo</button>
             <button type="button" id="dl" class="alt">Descargar JSON</button>
             <button type="button" id="pub">Publicar cambios (commit)</button>
         </div>
@@ -54,18 +54,24 @@
                 <tbody id="tb"></tbody>
             </table>
         </div>
-        <p class="hint"><b>Cómo se usa:</b> clic para elegir una celda · doble clic o Enter para editar · flechas y Tab para
-            moverte · Shift+flechas o arrastrar para elegir varias · Ctrl+C / Ctrl+V (podés pegar desde Google Sheets o
-            Excel) · Ctrl+D rellena hacia abajo · Supr borra · Ctrl+Z deshace.<br>
-            <b>Talles:</b> en las columnas S a XXL escribí el stock. Si la celda está vacía, ese talle no existe para el
-            producto; con 0 aparece como agotado. Para editar la descripción larga y las fotos, doble clic en esas
-            celdas.</p>
+        <p class="hint"><b>Cómo se usa:</b> cada producto es una fila y, debajo, una sub-fila por cada <b>color</b> (con su propio stock por
+            talle y sus propias fotos). Con el botón <b>＋</b> de la fila del producto agregás un color nuevo.<br>
+            Clic para elegir una celda · doble clic o Enter para editar · flechas y Tab para moverte · Shift+flechas o arrastrar para elegir
+            varias · Ctrl+C / Ctrl+V (podés pegar desde Google Sheets o Excel) · Ctrl+D rellena hacia abajo · Supr borra · Ctrl+Z deshace.<br>
+            <b>Talles:</b> en las sub-filas, columnas S a XXL, escribí el stock de ese color. Celda vacía = ese color no tiene ese talle;
+            0 = agotado. En la fila del producto los talles muestran el total (se calcula solo). <b>Fotos:</b> doble clic en la celda
+            Fotos de cada color para cargar las fotos de ese color; las de la fila del producto se muestran en todos los colores.</p>
     </main>
     <dialog id="dlg">
         <h2 id="mt">Producto</h2>
-        <label>Descripción completa<textarea id="md" rows="6"></textarea></label>
+        <p id="mi" class="mi"></p>
+        <label id="mdl">Descripción completa<textarea id="md" rows="6"></textarea></label>
         <label>Fotos (una por línea: nombre de archivo o URL)<textarea id="mf" rows="4"></textarea></label>
         <div id="mp" class="mp"></div>
+        <div id="mg" class="mg" hidden>
+            <p>Fotos generales (hoy se ven en todos los colores). Tocá una para pasarla a este color:</p>
+            <div id="mgl" class="mp"></div>
+        </div>
         <label>Subir fotos (se achican, se convierten a WebP y se suben al repo)<input type="file" id="up"
                 accept="image/*" multiple></label>
         <div class="act"><button type="button" class="alt" id="mc">Cancelar</button><button type="button"
