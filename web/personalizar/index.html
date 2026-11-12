@@ -48,6 +48,41 @@
                     </div>
                     <div class="ths" id="le"></div>
                 </div>
+                <details class="grp add" id="ad">
+                    <summary id="ad-sum">Agregar / renombrar estampados</summary>
+                    <p class="ayuda" id="ad-ayuda"></p>
+                    <div class="bt">
+                        <button type="button" class="alt" id="ad-con">Conectar carpeta del proyecto</button>
+                        <button type="button" class="alt" id="ad-sub">Subir imágenes…</button>
+                        <input type="file" id="ad-file" accept="image/png,image/webp,image/jpeg" multiple hidden>
+                    </div>
+                    <p class="nm" id="ad-est"></p>
+                    <p class="nm" id="ad-msg" role="status" aria-live="polite"></p>
+                    <div id="ad-form" hidden>
+                        <div class="ad-cab"><span id="ad-cont"></span><span id="ad-orig"></span></div>
+                        <img id="ad-img" alt="Vista del estampado">
+                        <div class="ad-fila"><span>Colores</span>
+                            <div class="seg" id="ad-col">
+                                <button type="button" data-c="1" style="--sw:#000">Negro</button>
+                                <button type="button" data-c="2" style="--sw:#fff">Blanco</button>
+                                <button type="button" data-c="3" style="--sw:#d11">Rojo</button>
+                            </div>
+                        </div>
+                        <div class="ad-fila"><span>Tipo</span>
+                            <div class="seg" id="ad-tipo">
+                                <button type="button" data-t="1">1 · Chico al centro</button>
+                                <button type="button" data-t="2">2 · Frente completo</button>
+                            </div>
+                        </div>
+                        <div class="ad-fila"><span>ID</span><b id="ad-id"></b></div>
+                        <div class="ad-fila"><span>Nombre</span><input id="ad-nom" type="text" maxlength="40" placeholder="ej: jordanlogo" autocomplete="off"></div>
+                        <p class="nm">Va a quedar como: <b id="ad-res">—</b></p>
+                        <div class="bt">
+                            <button type="button" id="ad-ok">Guardar y renombrar</button>
+                            <button type="button" class="alt" id="ad-skip">Saltar</button>
+                        </div>
+                    </div>
+                </details>
                 <div class="grp">
                     <h2>Etiqueta de cuello (grifa)</h2>
                     <div class="fil">

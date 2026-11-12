@@ -52,3 +52,20 @@ nav span { text-transform: uppercase; letter-spacing: .08em }
 .tls button.on { border-color: #000; background: #000; color: #fff }
 .tls .vacio { font-size: .8rem; color: #555 }
 .aj input:disabled { opacity: .35 }
+
+/* agregar / renombrar estampados */
+.add { border: 1px solid #ddd; padding: 0 12px }
+.add[open] { padding-bottom: 12px }
+.add summary { cursor: pointer; padding: 12px 0; font-size: 1rem; text-transform: uppercase; letter-spacing: .06em }
+.add .bt { margin-top: 8px }
+.add button:disabled { opacity: .35; cursor: not-allowed }
+#ad-form { margin-top: 14px; padding-top: 14px; border-top: 1px solid #ddd }
+.ad-cab { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: .8rem; color: #555; margin-bottom: 8px }
+#ad-orig { overflow-wrap: anywhere }
+#ad-img { display: block; max-width: 100%; max-height: 240px; margin: 0 auto 12px; object-fit: contain; border: 1px solid #ddd; background: #8a8a8a }
+.ad-fila { display: grid; grid-template-columns: 70px 1fr; align-items: center; gap: 8px; margin-bottom: 10px; font-size: .85rem }
+.ad-fila .seg { margin: 0 }
+.ad-fila input { width: 100%; box-sizing: border-box; padding: 7px; border: 1px solid #000; font: inherit }
+#ad-col button::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 6px; border: 1px solid #888; background: var(--sw) }
+#ad-col button.on::before { border-color: #fff }
+.nm.err { color: #b00020 }

@@ -10,7 +10,7 @@
   const W = 1200, H = 1600;                       // tamaño del PNG exportado
   /* Posiciones iniciales (fracción de la remera: w=ancho, cx/cy=centro, rot=grados).
      Si con tus fotos de remera no caen donde corresponde, cambiá estos números. */
-  const AJUSTE = { 1: { w: .30, cx: .50, cy: .36, rot: 0 }, 2: { w: .62, cx: .50, cy: .46, rot: 0 } };  // estampados por tipo
+  const AJUSTE = { 1: { w: .35, cx: .50, cy: .40, rot: 0 }, 2: { w: .62, cx: .50, cy: .46, rot: 0 } };  // estampados por tipo
   const AJ_ETI = { w: .075, cx: .52, cy: .08, rot: 0 };     // etiqueta de cuello (grifa)
   const AJ_TAG = { w: .15, cx: .69, cy: .125, rot: -15 };   // tag de cartón: cx/cy = punto donde entra el hilo; el tag cuelga y rota desde ahí
   const AJ_HILO = { cx: .66, cy: .075 };                    // punto del cuello donde nace el hilito
@@ -225,11 +225,143 @@
     } catch (e) { msg("El navegador bloqueó la exportación. Abrí la página desde la web (http/https), no desde el archivo suelto.", 1); dibujar() }
   };
 
+  /* ---------- agregar / renombrar estampados ----------
+     Con "Conectar carpeta" (Chrome/Edge) renombra los archivos en tu disco y actualiza lista.json.
+     Sin eso, descarga cada imagen ya con el nombre correcto. */
+  const FSA = "showDirectoryPicker" in window, PAT = /^(\d+)-(\d)-(\d+)-(.+)$/;
+  const A = { dir: null, root: null, base: 0, cola: [], col: new Set(), tipo: 0, busy: false };
+  let vistaUrl = null;
+  const am = (t, err) => { const e = $("#ad-msg"); e.textContent = t || ""; e.className = "nm" + (err ? " err" : "") };
+  const valido = f => { const m = base(f).match(PAT); return !!m && /^[123]+$/.test(m[1]) && !!AJUSTE[m[2]] };
+  const entEst = (f, u) => { const m = base(f).match(PAT); return { f, url: u, cods: [...new Set(m[1].split("").map(Number))], tipo: +m[2], id: +m[3], nombre: m[4] } };
+  const ordenar = () => D.estampados.sort((a, b) => a.f.localeCompare(b.f, "es", { numeric: true }));
+  const sigId = () => Math.max(A.base, 0, ...D.estampados.map(e => e.id)) + 1;      // último ID + 1
+  const extDe = n => (n.match(/\.[^.]+$/) || [".png"])[0].toLowerCase();
+  const nomFinal = () => {
+    const it = A.cola[0], n = limpio($("#ad-nom").value);
+    return it && A.col.size && A.tipo && n ? `${[...A.col].sort().join("")}-${A.tipo}-${sigId()}-${n}${extDe(it.n)}` : "";
+  };
+  const archivos = async d => { const r = []; for await (const [n, h] of d.entries()) if (h.kind === "file" && EXT.test(n)) r.push({ n, h }); return r.sort((a, b) => a.n.localeCompare(b.n, "es", { numeric: true })) };
+
+  function ref() {
+    const nf = nomFinal(), q = A.cola.length;
+    $("#ad-cont").textContent = q ? `Quedan ${q} por renombrar` : "";
+    document.querySelectorAll("#ad-col button").forEach(b => b.classList.toggle("on", A.col.has(b.dataset.c)));
+    document.querySelectorAll("#ad-tipo button").forEach(b => b.classList.toggle("on", +b.dataset.t === A.tipo));
+    $("#ad-id").textContent = sigId(); $("#ad-res").textContent = nf || "—";
+    $("#ad-ok").disabled = !nf || A.busy; $("#ad-skip").disabled = q < 2 || A.busy;
+    $("#ad-sum").textContent = "Agregar / renombrar estampados" + (q ? ` (${q} pendiente${q > 1 ? "s" : ""})` : "");
+  }
+  async function mostrar() {
+    if (vistaUrl) { URL.revokeObjectURL(vistaUrl); vistaUrl = null }
+    let it;
+    while ((it = A.cola[0]) && !it.file) {
+      try {
+        if (it.h) it.file = await it.h.getFile();
+        else { const r = await fetch(it.src, { cache: "no-cache" }); if (!r.ok) throw 0; const b = await r.blob(); it.file = new File([b], it.n, { type: b.type }) }
+      } catch (e) { am("No pude leer " + it.n + " (¿abriste la página desde la web o un servidor local?).", true); A.cola.shift() }
+    }
+    $("#ad-form").hidden = !it;
+    if (it) {
+      vistaUrl = URL.createObjectURL(it.file); $("#ad-img").src = vistaUrl; $("#ad-orig").textContent = it.n;
+      const m = base(it.n).match(PAT);                // si ya venía con formato, precarga lo que pueda
+      A.col = new Set(m ? [...new Set(m[1].split("").filter(c => "123".includes(c)))] : []);
+      A.tipo = m && AJUSTE[m[2]] ? +m[2] : 0;
+      $("#ad-nom").value = limpio(m ? m[4] : base(it.n));
+    }
+    ref();
+  }
+  async function escribirLista() {                  // igual que generar-lista, pero desde el navegador
+    const nombres = async d => (await archivos(d)).map(x => x.n).sort();
+    const sub = async n => { try { return await A.root.getDirectoryHandle(n) } catch (e) { return null } };
+    const L = {};
+    for (const c of ["remeras", "estampados", "fondo"]) { const d = await sub(c); L[c] = d ? await nombres(d) : [] }
+    L.etiquetas = {}; L.tags = [];
+    const et = await sub("etiquetas");
+    if (et) {
+      const dirs = []; for await (const [n, h] of et.entries()) if (h.kind === "directory") dirs.push([n, h]);
+      dirs.sort((a, b) => a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0);
+      for (const [n, h] of dirs) { if (n.toLowerCase() === "tags") L.tags = await nombres(h); else L.etiquetas[n] = await nombres(h) }
+    }
+    const w = await (await A.root.getFileHandle("lista.json", { create: true })).createWritable();
+    await w.write(JSON.stringify(L, null, 2)); await w.close();
+  }
+  async function guardar() {
+    const it = A.cola[0], nf = nomFinal(); if (!it || !nf || A.busy) return;
+    const cols = [...A.col].map(Number).sort(), tipo = A.tipo, id = sigId(), nom = limpio($("#ad-nom").value), file = it.file;
+    A.busy = true; ref(); let extra = "";
+    try {
+      if (A.dir) {
+        let hay = true; try { await A.dir.getFileHandle(nf) } catch (e) { hay = false }
+        if (hay) throw new Error("ya existe " + nf);
+        let borrar = it.h ? it.n : null;            // si el archivo original está en la carpeta, se reemplaza
+        if (!borrar) try { const f2 = await (await A.dir.getFileHandle(it.n)).getFile(); if (f2.size === file.size && f2.lastModified === file.lastModified) borrar = it.n } catch (e) { }
+        const w = await (await A.dir.getFileHandle(nf, { create: true })).createWritable(); await w.write(file); await w.close();
+        if (borrar) { await A.dir.removeEntry(borrar); D.estampados = D.estampados.filter(e => e.f !== borrar) }
+        A.base = id;
+        if (A.root) { try { await escribirLista(); extra = " · lista.json actualizado" } catch (e) { extra = " · no pude actualizar lista.json (corré generar-lista)" } }
+        else extra = " · corré generar-lista para actualizar lista.json";
+      } else {
+        const u = URL.createObjectURL(file), a = document.createElement("a"); a.href = u; a.download = nf;
+        document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 5000);
+        extra = " · descargado: ponelo en estampados/ (borrá el original) y corré generar-lista";
+      }
+      const k = ignorados.indexOf(it.n); if (k >= 0) ignorados.splice(k, 1);
+      if (!ignorados.length) msg(""); else msg("Archivos ignorados por nombre inválido: " + ignorados.join(", "), 1);
+      const ent = { f: nf, url: URL.createObjectURL(file), cods: cols, tipo, id, nombre: nom };
+      D.estampados.push(ent); ordenar();
+      st.estampado = ent; st.act = "est"; reset("est"); pintarE(); dibujar();       // lo muestra en la remera
+      A.cola.shift(); A.busy = false; await mostrar(); am("✔ " + nf + extra);
+    } catch (e) { A.busy = false; ref(); am("No se pudo guardar: " + (e && e.message || e), true) }
+  }
+
+  $("#ad-col").onclick = e => { const b = e.target.closest("button"); if (!b) return; const c = b.dataset.c; A.col.has(c) ? A.col.delete(c) : A.col.add(c); ref() };
+  $("#ad-tipo").onclick = e => { const b = e.target.closest("button"); if (!b) return; A.tipo = +b.dataset.t; ref() };
+  $("#ad-nom").oninput = ref;
+  $("#ad-nom").onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); guardar() } };
+  $("#ad-ok").onclick = guardar;
+  $("#ad-skip").onclick = () => { A.cola.push(A.cola.shift()); mostrar() };
+  $("#ad-sub").onclick = () => $("#ad-file").click();
+  $("#ad-file").onchange = e => {
+    const vacia = !A.cola.length;
+    [...e.target.files].filter(f => EXT.test(f.name)).forEach(f => A.cola.push({ n: f.name, file: f }));
+    e.target.value = ""; $("#ad").open = true; am("");
+    if (vacia) mostrar(); else ref();
+  };
+  $("#ad-con").onclick = async () => {
+    try {
+      const root = await window.showDirectoryPicker({ mode: "readwrite" }), solo = root.name.toLowerCase() === "estampados";
+      const dir = solo ? root : await root.getDirectoryHandle("estampados");
+      const es = await archivos(dir);
+      A.dir = dir; A.root = solo ? null : root;
+      A.base = Math.max(0, ...es.filter(x => valido(x.n)).map(x => +x.n.match(PAT)[3]));
+      let nuevos = 0;                                // válidos que lista.json todavía no tenía
+      es.filter(x => valido(x.n) && !D.estampados.some(d => d.f === x.n)).forEach(x => { D.estampados.push(entEst(x.n, url("estampados", x.n))); nuevos++ });
+      if (nuevos) { ordenar(); pintarE() }
+      A.cola = A.cola.filter(x => !x.h && !x.src);
+      es.filter(x => !valido(x.n)).forEach(x => A.cola.push({ n: x.n, h: x.h }));
+      $("#ad-est").textContent = "Carpeta conectada: " + root.name + (solo ? " (solo estampados: no se actualiza lista.json)" : "");
+      $("#ad-con").textContent = "Cambiar carpeta";
+      am(A.cola.length ? "" : "✔ No hay estampados sin renombrar."); await mostrar();
+    } catch (e) {
+      if (e.name === "AbortError") return;
+      am(e.name === "NotFoundError" ? "No encuentro la carpeta estampados ahí adentro. Elegí la carpeta del proyecto (la que tiene index.html)." : "No pude abrir la carpeta: " + e.message, true);
+    }
+  };
+  function adIniciar() {
+    $("#ad-con").hidden = !FSA;
+    $("#ad-ayuda").textContent = FSA
+      ? "Conectá la carpeta del proyecto (la que tiene index.html) y renombro los archivos ahí mismo, actualizando lista.json. También podés subir imágenes nuevas desde tu PC."
+      : "Este navegador no puede escribir en tu carpeta: cada imagen se descarga ya con el nombre correcto. Para renombrar directo usá Chrome o Edge en la compu.";
+    ignorados.filter(f => !f.includes("/")).forEach(f => A.cola.push({ n: f, src: url("estampados", f) }));
+    mostrar();
+  }
+
   /* ---------- inicio ---------- */
   (async () => {
     parsear(await listar());
     st.remera = D.remeras[0] || null;
-    pintar(); dibujar();
+    pintar(); dibujar(); adIniciar();
     if (ignorados.length) msg("Archivos ignorados por nombre inválido: " + ignorados.join(", "), 1);
     else if (!D.remeras.length) msg("No se encontraron remeras. Si abriste el archivo directo desde tu PC, usá un servidor local o subilo a la web.", 1);
   })();
