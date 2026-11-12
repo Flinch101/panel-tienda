@@ -394,3 +394,40 @@ td.cl { font-weight: 600 }
 td.ax { white-space: nowrap }
 
 [hidden] { display: none !important }
+
+/* ---------- carga masiva ---------- */
+#bk { width: min(1320px, 98vw); height: 94vh; padding: 0 }
+#bk[open] { display: flex; flex-direction: column }
+#bk label { margin: 0 }
+.bk-top { display: flex; align-items: center; gap: 14px; padding: 10px 16px; border-bottom: 1px solid #e2e3e3; flex-wrap: wrap }
+.bk-top h2 { margin: 0 } .bk-top .mi { flex: 1; margin: 0; min-width: 240px }
+.bk-body { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(280px, 380px) 1fr }
+.bk-izq, .bk-der { overflow: auto; min-height: 0 }
+.bk-izq { border-right: 1px solid #e2e3e3; padding: 10px; background: #f8f9fa }
+.bk-der { padding: 4px 10px 14px }
+.bk-bar, .bk-acc { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px }
+.bk-bar input { display: inline; width: auto }
+.bk-add { background: #000; color: #fff; padding: 7px 12px; cursor: pointer }
+.bk-th { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 6px }
+.bk-f { position: relative; padding: 0; aspect-ratio: 4/5; overflow: hidden; background: #eee; border: 2px solid transparent }
+.bk-f img { width: 100%; height: 100%; object-fit: cover; display: block }
+.bk-f.as img { opacity: .4 } .bk-f.on { border-color: #1a73e8; box-shadow: 0 0 0 2px #1a73e855 } .bk-f.er { border-color: #d93025 }
+.bk-b { position: absolute; left: 0; right: 0; bottom: 0; background: #000c; color: #fff; font-size: 10px; padding: 1px 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.bk-p { border: 1px solid #c4c7c5; margin: 10px 0; padding: 10px }
+.bk-p > header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px }
+.bk-p > header .mi { flex: 1; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.bk-hb { display: flex; gap: 6px }
+.bk-g { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 6px 10px; margin-bottom: 8px }
+.bk-g label { font-size: .75rem; color: #5f6368 }
+.bk-p details { margin: 6px 0; padding: 6px 10px }
+.bk-v { display: grid; grid-template-columns: 130px auto 1fr auto; gap: 8px; align-items: center; border-top: 1px dashed #d3d6d9; padding: 8px 0 }
+.bk-st { display: flex; gap: 3px } .bk-st input { width: 46px; padding: 6px 2px; text-align: center }
+.bk-fs { display: flex; gap: 4px; flex-wrap: wrap; align-items: center }
+.bk-m { position: relative } .bk-m img { width: 44px; height: 55px; object-fit: cover; display: block; border: 1px solid #ddd }
+.bk-m button { position: absolute; top: 0; right: 0; padding: 0 4px; font-size: 12px; line-height: 16px; background: #000c; border: 0 }
+.bk-vb { display: flex; gap: 4px }
+.bk-pie { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-top: 1px solid #e2e3e3; flex-wrap: wrap }
+.bk-pie progress { width: 160px } #bk-st { flex: 1; font-size: .8rem; min-width: 200px } #bk-st.err { color: #c5221f; font-weight: 500 }
+#bk .bad { outline: 2px solid #d93025; background: #fde8e8 }
+#bk button:disabled { opacity: .4; cursor: not-allowed }
+@media(max-width:900px) { .bk-body { grid-template-columns: 1fr; overflow: auto } .bk-izq, .bk-der { overflow: visible } .bk-v { grid-template-columns: 1fr } }
