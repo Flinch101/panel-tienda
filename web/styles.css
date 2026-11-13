@@ -1,4 +1,3 @@
-<<<<<<< HEAD
  .hero {
     text-align: center;
     padding: 40px 0
@@ -6,13 +5,4 @@
 
 .hero p {
     color: var(--mut)
-=======
- .hero {
-    text-align: center;
-    padding: 40px 0
-}
-
-.hero p {
-    color: #555
->>>>>>> 0aab7b1fed432dab012fffc66d171a52b88a310b
 }

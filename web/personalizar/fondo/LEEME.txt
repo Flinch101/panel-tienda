@@ -1,0 +1,2 @@
+Poné acá los fondos (cualquier nombre; PNG, JPG o WEBP; ideal vertical 3:4).
+Después corré generar-lista.py (o generar-lista.js).

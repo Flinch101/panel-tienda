@@ -1,0 +1,4 @@
+Poné acá las fotos de las remeras (PNG con fondo transparente, de frente).
+El color se detecta por el nombre: debe incluir "negro", "blanco" o "rojo"
+(o empezar con 1, 2 o 3).  Ej: remera-negro.png, blanco.png, roja.png.
+Después corré generar-lista.py (o generar-lista.js).
