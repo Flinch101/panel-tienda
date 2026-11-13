@@ -367,7 +367,7 @@
       "marca": "NIKE JORDAN",
       "modelo": "Clásica",
       "genero": "unisex",
-      "estado": "Publicado",
+      "estado": "Oculto",
       "fechaPublicacion": "",
       "precio": 15000,
       "cuotas": {
@@ -1137,7 +1137,7 @@
       "marca": "NIKE JORDAN",
       "modelo": "Clásica",
       "genero": "unisex",
-      "estado": "Publicado",
+      "estado": "Oculto",
       "fechaPublicacion": "",
       "precio": 15000,
       "cuotas": {
