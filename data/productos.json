@@ -25,8 +25,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem1-blanca-1.webp"
@@ -55,8 +55,8 @@
       ],
       "stock": {
         "M": 1,
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -94,8 +94,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem2-blanca-1.webp"
@@ -113,8 +113,8 @@
       ],
       "stock": {
         "M": 1,
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -142,8 +142,8 @@
           "color": "Blanca",
           "stock": {
             "M": 1,
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem3-blanca-1.webp"
@@ -181,8 +181,8 @@
       ],
       "stock": {
         "M": 2,
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -210,8 +210,8 @@
           "color": "Blanca",
           "stock": {
             "M": 1,
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem4-blanca-1.webp"
@@ -239,8 +239,8 @@
       ],
       "stock": {
         "M": 1,
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -268,8 +268,8 @@
           "color": "Blanca",
           "stock": {
             "S": 1,
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem5-blanca-1.webp"
@@ -297,8 +297,8 @@
       ],
       "stock": {
         "S": 1,
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -326,7 +326,7 @@
           "color": "Blanca",
           "stock": {
             "L": 1,
-            "XL": 1
+            "XL": 0
           },
           "fotos": [
             "rem6-blanca-1.webp"
@@ -353,7 +353,7 @@
       ],
       "stock": {
         "L": 2,
-        "XL": 2
+        "XL": 1
       }
     },
     {
@@ -380,8 +380,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem7-blanca-1.webp"
@@ -390,8 +390,8 @@
         {
           "color": "Negra",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem7-negra-1.webp"
@@ -407,8 +407,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 0,
+        "XL": 0
       }
     },
     {
@@ -435,8 +435,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem8-blanca-1.webp"
@@ -462,8 +462,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -490,8 +490,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem9-blanca-1.webp"
@@ -517,8 +517,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -545,8 +545,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem10-blanca-1.webp"
@@ -572,8 +572,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -600,8 +600,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem11-blanca-1.webp"
@@ -627,8 +627,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -655,8 +655,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem12-blanca-1.webp"
@@ -682,8 +682,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -710,8 +710,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem13-blanca-1.webp"
@@ -737,8 +737,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -765,8 +765,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem14-blanca-1.webp"
@@ -792,8 +792,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -820,8 +820,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem15-blanca-1.webp"
@@ -847,8 +847,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -875,8 +875,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem16-blanca-1.webp"
@@ -902,8 +902,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -930,8 +930,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem17-blanca-1.webp"
@@ -957,8 +957,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -985,8 +985,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem18-blanca-1.webp"
@@ -1012,8 +1012,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -1040,8 +1040,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem19-blanca-1.webp"
@@ -1067,8 +1067,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -1095,8 +1095,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem20-blanca-1.webp"
@@ -1122,8 +1122,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -1150,8 +1150,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem21-blanca-1.webp"
@@ -1160,8 +1160,8 @@
         {
           "color": "Negra",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem21-negra-1.webp"
@@ -1177,8 +1177,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 0,
+        "XL": 0
       }
     },
     {
@@ -1205,8 +1205,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem22-blanca-1.webp"
@@ -1232,8 +1232,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     },
     {
@@ -1260,8 +1260,8 @@
         {
           "color": "Blanca",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem23-blanca-1.webp"
@@ -1287,8 +1287,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 2
+        "L": 1,
+        "XL": 1
       }
     }
   ],
