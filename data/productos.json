@@ -12,7 +12,7 @@
       "marca": "NIKE JORDAN",
       "modelo": "Clásica",
       "genero": "unisex",
-      "estado": "Publicado",
+      "estado": "Oculto",
       "fechaPublicacion": "",
       "precio": 15000,
       "cuotas": {
@@ -36,8 +36,8 @@
           "color": "Negra",
           "stock": {
             "M": 1,
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem1-negra-1.webp"
@@ -55,8 +55,8 @@
       ],
       "stock": {
         "M": 1,
-        "L": 1,
-        "XL": 1
+        "L": 0,
+        "XL": 0
       }
     },
     {
@@ -84,8 +84,8 @@
           "color": "Negra",
           "stock": {
             "M": 1,
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem2-negra-1.webp"
@@ -113,8 +113,8 @@
       ],
       "stock": {
         "M": 1,
-        "L": 1,
-        "XL": 1
+        "L": 0,
+        "XL": 0
       }
     },
     {
@@ -335,8 +335,8 @@
         {
           "color": "Negra",
           "stock": {
-            "L": 1,
-            "XL": 1
+            "L": 0,
+            "XL": 0
           },
           "fotos": [
             "rem6-negra-1.webp"
@@ -352,8 +352,8 @@
         "XL"
       ],
       "stock": {
-        "L": 2,
-        "XL": 1
+        "L": 1,
+        "XL": 0
       }
     },
     {
