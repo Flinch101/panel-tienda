@@ -1,305 +1,98 @@
-* {
-    box-sizing: border-box;
-    margin: 0
+:root {
+    --bg: #fff; --fg: #000; --mut: #555; --mut2: #888; --line: #ddd; --line2: #bbb; --soft: #eee; --soft2: #f5f5f5;
+    --btn: #000; --btn-fg: #fff; --glass: rgba(255, 255, 255, .94); --foot: #000; --foot-fg: #fff; --err: #b00020;
+    --tsw-bg: #e6e6e6; --tsw-bd: #bbb; --tsw-kn: #fff; --tsw-ic: #000; --logo-filter: none; color-scheme: light
 }
 
-body {
-    font-family: Poppins, system-ui, sans-serif;
-    color: #000;
-    background: #fff;
-    line-height: 1.5
+:root[data-theme="dark"] {
+    --bg: #121212; --fg: #f2f2f2; --mut: #a8a8a8; --mut2: #7a7a7a; --line: #333; --line2: #555; --soft: #1f1f1f; --soft2: #191919;
+    --btn: #f2f2f2; --btn-fg: #111; --glass: rgba(28, 28, 28, .94); --foot: #0a0a0a; --foot-fg: #f2f2f2; --err: #ff6b81;
+    --tsw-bg: #3a3a3a; --tsw-bd: #555; --tsw-kn: #f2f2f2; --tsw-ic: #111; --logo-filter: invert(1); color-scheme: dark
 }
 
-a {
-    color: inherit
-}
+* { box-sizing: border-box; margin: 0 }
 
-.top {
-    max-width: 1200px;
-    margin: auto;
-    padding: 16px;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 12px
-}
+body { font-family: Poppins, system-ui, sans-serif; color: var(--fg); background: var(--bg); line-height: 1.5 }
 
-.top img {
-    height: 70px;
-    display: block
-}
+a { color: inherit }
 
-.top form {
-    display: flex;
-    border-bottom: 1px solid #000;
-    max-width: 260px
-}
+.ico { width: 1.15em; height: 1.15em; display: block; flex: none }
 
-.top input {
-    border: 0;
-    outline: 0;
-    flex: 1;
-    min-width: 0;
-    padding: 6px;
-    font: inherit
-}
+.top { max-width: 1200px; margin: auto; padding: 16px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px }
+.top img { height: 70px; display: block; filter: var(--logo-filter) }
+.top form { display: flex; min-width: 0; border-bottom: 1px solid var(--fg); max-width: 260px }
+.top input { border: 0; outline: 0; flex: 1; min-width: 0; width: 100%; padding: 6px; font: inherit; background: transparent; color: var(--fg) }
+.top input::placeholder { color: var(--mut2) }
+.top form button { background: 0; border: 0; cursor: pointer; color: var(--fg); display: grid; place-items: center; padding: 0 4px; font-size: 1.15rem }
+.tr { justify-self: end; display: flex; align-items: center; gap: 14px }
 
-.top form button {
-    background: 0;
-    border: 0;
-    cursor: pointer
-}
+#cb { display: flex; align-items: center; gap: 5px; background: 0; border: 0; font: inherit; cursor: pointer; color: var(--fg); font-size: 1.3rem }
+#cb #cn { font-size: .8rem; font-weight: 600; min-width: 1.5em; height: 1.5em; padding: 0 5px; border-radius: 1em; background: var(--btn); color: var(--btn-fg); display: inline-grid; place-items: center; line-height: 1 }
 
-#cb {
-    justify-self: end;
-    background: 0;
-    border: 0;
-    font: inherit;
-    cursor: pointer
-}
+nav { display: flex; justify-content: center; gap: 26px; padding: 12px; flex-wrap: wrap; border-bottom: 1px solid var(--line); font-size: .85rem }
+nav a { text-decoration: none }
+nav a:hover { text-decoration: underline }
 
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 26px;
-    padding: 12px;
-    flex-wrap: wrap;
-    border-bottom: 1px solid #ddd;
-    font-size: .85rem
-}
+main { max-width: 1200px; margin: auto; padding: 24px 16px; min-height: 60vh }
+h1, h2 { margin-bottom: 16px; font-weight: 600 }
 
-nav a {
-    text-decoration: none
-}
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 240px)); justify-content: space-between; gap: 28px 16px }
 
-nav a:hover {
-    text-decoration: underline
-}
+.card { display: flex; flex-direction: column; gap: 6px; text-align: center }
+.card a { text-decoration: none; color: inherit }
+.card img { display: block; width: 100%; aspect-ratio: 3/4; object-fit: cover; background: var(--soft) }
+.card h3 { font-size: .95rem; font-weight: 500; text-transform: uppercase }
+.card .sub { font-size: .8rem; color: var(--mut) }
+.card small { color: var(--mut) }
 
-main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 24px 16px;
-    min-height: 60vh
-}
+/* colores de la tarjeta: texto chico y prolijo; al tocar uno cambia la foto */
+.cl { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 12px; font-size: .78rem; margin: 2px 0 4px }
+.cl .cc { background: 0; border: 0; padding: 1px 0; font: inherit; color: var(--mut); cursor: pointer; border-bottom: 1px solid transparent; text-transform: capitalize }
+.cl .cc:hover { color: var(--fg) }
+.cl .cc.on { color: var(--fg); font-weight: 600; border-bottom-color: var(--fg) }
+.cl .cc.ns:not(.on) { opacity: .5; text-decoration: line-through }
 
-h1,
-h2 {
-    margin-bottom: 16px;
-    font-weight: 600
-}
+button.b, .card button.b2 { background: var(--btn); color: var(--btn-fg); border: 1px solid var(--btn); padding: 9px; cursor: pointer; font: inherit; font-size: .8rem }
+.card button[data-a] { background: var(--btn); color: var(--btn-fg); border: 1px solid var(--btn); padding: 9px; cursor: pointer; font: inherit; font-size: .8rem }
+.card button.alt, button.alt { background: var(--bg); color: var(--fg) }
+.card button:disabled { opacity: .35; cursor: not-allowed }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    gap: 20px
-}
+/* selector de talle que aparece al tocar "Agregar" / "Pedir" en una tarjeta */
+#sp { border: 1px solid var(--fg); background: var(--bg); color: var(--fg); padding: 20px; width: min(360px, 92vw) }
+#sp::backdrop { background: #0008 }
+#sp h3 { font-size: 1rem; margin-bottom: 2px }
+#sp p { color: var(--mut); font-size: .85rem; margin-bottom: 12px }
+#sp .pl { display: flex; flex-wrap: wrap; gap: 8px }
+#sp .pill { min-width: 46px; padding: 9px 14px; border: 1px solid var(--line2); background: var(--bg); color: var(--fg); font: inherit; font-size: .85rem; cursor: pointer }
+#sp .pill:hover:not(:disabled) { border-color: var(--fg) }
+#sp .pill:disabled { opacity: .4; cursor: not-allowed; text-decoration: line-through; background: var(--soft) }
+#sp .x { display: block; margin: 14px 0 0 auto; background: 0; border: 0; color: var(--mut); cursor: pointer; font: inherit; font-size: .85rem }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    text-align: center
-}
+#cart { position: fixed; top: 0; right: 0; height: 100%; width: min(380px, 100%); background: var(--bg); color: var(--fg); border-left: 1px solid var(--fg); transform: translateX(100%); transition: transform .25s; z-index: 20; padding: 16px; display: flex; flex-direction: column; gap: 10px }
+#cart.on { transform: none }
+#ci { list-style: none; padding: 0; flex: 1; overflow: auto }
+#ci li { display: flex; gap: 8px; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding: 8px 0 }
+#ci button, #cx { background: 0; border: 0; cursor: pointer; font-size: 1rem; color: var(--fg) }
+#cx { align-self: flex-end }
+#cw { display: block; text-align: center; background: var(--btn); color: var(--btn-fg); padding: 11px; text-decoration: none }
 
-.card img {
-    width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    background: #eee
-}
+.fab { position: fixed; right: 20px; bottom: 20px; width: 56px; height: 56px; border-radius: 50%; background: var(--btn); color: var(--btn-fg); display: grid; place-items: center; text-decoration: none; box-shadow: 0 2px 8px #0005; z-index: 10; border: 1px solid var(--line2) }
+.fab .ico { width: 30px; height: 30px }
 
-.card h3 {
-    font-size: .95rem;
-    font-weight: 500;
-    text-transform: uppercase
-}
+footer { background: var(--foot); color: var(--foot-fg); padding: 32px 16px; margin-top: 40px; border-top: 1px solid var(--line) }
+.fg { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; font-size: .9rem }
+.fg h4 { margin-bottom: 8px }
+.fg a { display: block; text-decoration: none; padding: 2px 0 }
+.fg a:hover { text-decoration: underline }
 
-.card .sub {
-    font-size: .8rem;
-    color: #555
-}
-
-.card small {
-    color: #555
-}
-
-.sel {
-    display: flex;
-    gap: 6px
-}
-
-.sel select {
-    flex: 1;
-    padding: 6px;
-    border: 1px solid #000;
-    background: #fff;
-    font: inherit
-}
-
-button.b,
-.card button {
-    background: #000;
-    color: #fff;
-    border: 1px solid #000;
-    padding: 9px;
-    cursor: pointer;
-    font: inherit;
-    font-size: .8rem
-}
-
-.card button.alt,
-button.alt {
-    background: #fff;
-    color: #000
-}
-
-#cart {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: min(380px, 100%);
-    background: #fff;
-    border-left: 1px solid #000;
-    transform: translateX(100%);
-    transition: transform .25s;
-    z-index: 20;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px
-}
-
-#cart.on {
-    transform: none
-}
-
-#ci {
-    list-style: none;
-    padding: 0;
-    flex: 1;
-    overflow: auto
-}
-
-#ci li {
-    display: flex;
-    gap: 8px;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding: 8px 0
-}
-
-#ci button,
-#cx {
-    background: 0;
-    border: 0;
-    cursor: pointer;
-    font-size: 1rem
-}
-
-#cx {
-    align-self: flex-end
-}
-
-#cw {
-    display: block;
-    text-align: center;
-    background: #000;
-    color: #fff;
-    padding: 11px;
-    text-decoration: none
-}
-
-.fab {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: #25d366;
-    color: #fff;
-    display: grid;
-    place-items: center;
-    font-size: 1.6rem;
-    text-decoration: none;
-    box-shadow: 0 2px 8px #0005;
-    z-index: 10
-}
-
-footer {
-    background: #000;
-    color: #fff;
-    padding: 32px 16px;
-    margin-top: 40px
-}
-
-.fg {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 24px;
-    font-size: .9rem
-}
-
-.fg h4 {
-    margin-bottom: 8px
-}
-
-.fg a {
-    display: block;
-    text-decoration: none;
-    padding: 2px 0
-}
-
-.fg a:hover {
-    text-decoration: underline
-}
+img { max-width: 100%; height: auto }
 
 @media(max-width:600px) {
-    .top {
-        grid-template-columns: 1fr auto
-    }
-
-    .top a:nth-child(2) {
-        order: -1;
-        grid-column: 1/-1;
-        justify-self: center
-    }
-}
-
-.card a {
-    text-decoration: none;
-    color: inherit
-}
-
-.card img {
-    display: block
-}
-
-img {
-    max-width: 100%;
-    height: auto
-}
-
-.grid {
-    grid-template-columns: repeat(auto-fill, minmax(210px, 240px));
-    justify-content: space-between;
-    gap: 28px 16px
+    .top { grid-template-columns: 1fr auto }
+    .top a:nth-child(2) { order: -1; grid-column: 1/-1; justify-self: center }
 }
 
 @media(max-width:520px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: stretch;
-        gap: 20px 10px
-    }
-
-    .sel {
-        flex-direction: column
-    }
+    .grid { grid-template-columns: repeat(2, 1fr); justify-content: stretch; gap: 20px 10px }
+    .tr { gap: 10px }
 }
-.card button:disabled{opacity:.35;cursor:not-allowed}

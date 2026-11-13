@@ -1,3 +1,18 @@
+/* ---------- colores (claro / oscuro) ---------- */
+:root {
+    --a-bg: #fff; --a-fg: #202124; --a-bd: #e2e3e3; --a-bd2: #c4c7c5; --a-bd3: #d3d6d9; --a-soft: #f8f9fa; --a-soft2: #f1f3f4; --a-hov: #eef0f1;
+    --a-mut: #5f6368; --a-mut2: #9aa0a6; --a-mut3: #a8adb2; --a-th: #444746; --a-th2: #444; --a-sel: #e8f0fe; --a-blue: #1a73e8; --a-chip: #eee;
+    --a-sub: #fafbfc; --a-subrn: #f1f6fe; --a-sb: #f3f4f5; --a-der: #fbfbfb; --a-st1: #f6f6f6; --a-st2: #fff;
+    --a-redbg: #fde8e8; --a-red: #b3261e; --a-red2: #d93025; --a-red3: #8a1c1c; --a-red4: #c5221f; --a-ambbg: #fff4d6; --a-warn: #b06000; --a-okbg: #d8f3dc; --a-ok: #14532d;
+    --a-btn: #000; --a-btn-fg: #fff; --tsw-bg: #e6e6e6; --tsw-bd: #bbb; --tsw-kn: #fff; --tsw-ic: #000; --logo-filter: none; color-scheme: light
+}
+:root[data-theme="dark"] {
+    --a-bg: #1b1b1d; --a-fg: #e8eaed; --a-bd: #3c4043; --a-bd2: #5f6368; --a-bd3: #4a4d51; --a-soft: #242528; --a-soft2: #2c2d31; --a-hov: #35373b;
+    --a-mut: #9aa0a6; --a-mut2: #80868b; --a-mut3: #6f757a; --a-th: #bdc1c6; --a-th2: #bdc1c6; --a-sel: #1f3250; --a-blue: #8ab4f8; --a-chip: #33353a;
+    --a-sub: #202124; --a-subrn: #1c2a40; --a-sb: #26272a; --a-der: #222326; --a-st1: #26272a; --a-st2: #1b1b1d;
+    --a-redbg: #4a1f1f; --a-red: #f28b82; --a-red2: #f28b82; --a-red3: #f6aea9; --a-red4: #f28b82; --a-ambbg: #4a3b0a; --a-warn: #fdd663; --a-okbg: #1e4620; --a-ok: #a8e6b0;
+    --a-btn: #e8eaed; --a-btn-fg: #111; --tsw-bg: #3a3a3a; --tsw-bd: #555; --tsw-kn: #e8eaed; --tsw-ic: #111; --logo-filter: invert(1); color-scheme: dark
+}
 * {
     box-sizing: border-box
 }
@@ -5,28 +20,28 @@
 body {
     margin: 0;
     font-family: Poppins, system-ui, sans-serif;
-    background: #fff;
-    color: #202124;
+    background: var(--a-bg);
+    color: var(--a-fg);
     font-size: 13px
 }
 
 button {
-    background: #000;
-    color: #fff;
-    border: 1px solid #000;
+    background: var(--a-btn);
+    color: var(--a-btn-fg);
+    border: 1px solid var(--a-btn);
     padding: 7px 12px;
     cursor: pointer;
     font: inherit
 }
 
 button.alt {
-    background: #fff;
-    color: #000;
-    border-color: #c4c7c5
+    background: var(--a-bg);
+    color: var(--a-fg);
+    border-color: var(--a-bd2)
 }
 
 button.alt:hover {
-    background: #f1f3f4
+    background: var(--a-soft2)
 }
 
 button.dirty {
@@ -40,8 +55,8 @@ button.dirty {
     flex-wrap: wrap;
     gap: 10px;
     padding: 8px 16px;
-    border-bottom: 1px solid #e2e3e3;
-    background: #fff
+    border-bottom: 1px solid var(--a-bd);
+    background: var(--a-bg)
 }
 
 .tl {
@@ -51,6 +66,7 @@ button.dirty {
 }
 
 .tl img {
+    filter: var(--logo-filter);
     height: 34px
 }
 
@@ -62,11 +78,11 @@ button.dirty {
 
 .est {
     font-size: .75rem;
-    color: #5f6368
+    color: var(--a-mut)
 }
 
 .est.dirty {
-    color: #b06000;
+    color: var(--a-warn);
     font-weight: 600
 }
 
@@ -81,8 +97,8 @@ main {
 }
 
 details {
-    background: #f8f9fa;
-    border: 1px solid #e2e3e3;
+    background: var(--a-soft);
+    border: 1px solid var(--a-bd);
     padding: 10px 12px;
     margin-bottom: 10px
 }
@@ -109,12 +125,13 @@ dialog label {
 input,
 select,
 textarea {
+    color: var(--a-fg);
     display: block;
     width: 100%;
     padding: 7px;
-    border: 1px solid #c4c7c5;
+    border: 1px solid var(--a-bd2);
     font: inherit;
-    background: #fff
+    background: var(--a-bg)
 }
 
 .tb {
@@ -134,7 +151,7 @@ textarea {
 }
 
 .cnt {
-    color: #5f6368;
+    color: var(--a-mut);
     font-size: .8rem;
     margin-left: auto
 }
@@ -146,7 +163,7 @@ textarea {
 }
 
 #msg.err {
-    color: #c5221f
+    color: var(--a-red4)
 }
 
 /* ---------- la planilla ---------- */
@@ -154,10 +171,10 @@ textarea {
     overflow: auto;
     height: calc(100vh - 250px);
     min-height: 380px;
-    border: 1px solid #e2e3e3;
+    border: 1px solid var(--a-bd);
     scroll-padding-left: 360px;
     scroll-padding-top: 34px;
-    background: #fff
+    background: var(--a-bg)
 }
 
 table {
@@ -170,28 +187,28 @@ th,
 td {
     height: 28px;
     padding: 0 6px;
-    border-right: 1px solid #e2e3e3;
-    border-bottom: 1px solid #e2e3e3;
+    border-right: 1px solid var(--a-bd);
+    border-bottom: 1px solid var(--a-bd);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
-    background: #fff
+    background: var(--a-bg)
 }
 
 th {
     position: sticky;
     top: 0;
     z-index: 3;
-    background: #f8f9fa;
+    background: var(--a-soft);
     font-weight: 500;
-    color: #444746;
+    color: var(--a-th);
     cursor: pointer;
     user-select: none
 }
 
 th:hover {
-    background: #eef0f1
+    background: var(--a-hov)
 }
 
 td {
@@ -210,15 +227,15 @@ th.fz {
 
 td.rn,
 th.rn {
-    background: #f8f9fa;
-    color: #5f6368;
+    background: var(--a-soft);
+    color: var(--a-mut);
     text-align: center;
     padding: 0;
     cursor: default
 }
 
 td.rn:hover {
-    background: #e8eaed
+    background: var(--a-hov)
 }
 
 td.n {
@@ -230,37 +247,37 @@ td.s {
 }
 
 td.ns {
-    background: repeating-linear-gradient(45deg, #f6f6f6 0 5px, #fff 5px 10px)
+    background: repeating-linear-gradient(45deg, var(--a-st1) 0 5px, var(--a-st2) 5px 10px)
 }
 
 td.z {
-    background: #fde8e8;
-    color: #b3261e;
+    background: var(--a-redbg);
+    color: var(--a-red);
     font-weight: 600
 }
 
 td.lo {
-    background: #fff4d6
+    background: var(--a-ambbg)
 }
 
 td.bad {
-    background: #fde8e8;
-    box-shadow: inset 0 0 0 1px #d93025
+    background: var(--a-redbg);
+    box-shadow: inset 0 0 0 1px var(--a-red2)
 }
 
 td.sel {
-    background: #e8f0fe
+    background: var(--a-sel)
 }
 
 td.cur {
-    outline: 2px solid #1a73e8;
+    outline: 2px solid var(--a-blue);
     outline-offset: -2px
 }
 
 td.ed {
     padding: 0;
     overflow: visible;
-    background: #fff
+    background: var(--a-bg)
 }
 
 td.ed input,
@@ -269,7 +286,7 @@ td.ed select {
     height: 100%;
     min-height: 26px;
     border: 0;
-    outline: 2px solid #1a73e8;
+    outline: 2px solid var(--a-blue);
     outline-offset: -2px;
     padding: 0 6px;
     user-select: text
@@ -284,21 +301,21 @@ td.ax {
 td.ax button {
     background: 0;
     border: 0;
-    color: #5f6368;
+    color: var(--a-mut);
     padding: 2px 5px;
     font-size: .9rem
 }
 
 td.ax button:hover {
-    color: #000
+    color: var(--a-fg)
 }
 
 td.ax button[data-x=del]:hover {
-    color: #c5221f
+    color: var(--a-red4)
 }
 
 .mut {
-    color: #9aa0a6
+    color: var(--a-mut2)
 }
 
 .chip {
@@ -306,21 +323,21 @@ td.ax button[data-x=del]:hover {
     padding: 1px 9px;
     border-radius: 10px;
     font-size: .75rem;
-    background: #eee
+    background: var(--a-chip)
 }
 
 .chip.Publicado {
-    background: #d8f3dc;
-    color: #14532d
+    background: var(--a-okbg);
+    color: var(--a-ok)
 }
 
 .chip.Oculto {
-    background: #fde8e8;
-    color: #8a1c1c
+    background: var(--a-redbg);
+    color: var(--a-red3)
 }
 
 .hint {
-    color: #5f6368;
+    color: var(--a-mut);
     font-size: .78rem;
     line-height: 1.6;
     margin: 10px 0 0
@@ -328,8 +345,10 @@ td.ax button[data-x=del]:hover {
 
 /* ---------- ventana de descripción / fotos ---------- */
 dialog {
+    background: var(--a-bg);
+    color: var(--a-fg);
     width: min(720px, 95%);
-    border: 1px solid #000;
+    border: 1px solid var(--a-fg);
     padding: 18px;
     max-height: 92vh
 }
@@ -360,8 +379,8 @@ dialog::backdrop {
     width: 64px;
     height: 80px;
     object-fit: cover;
-    background: #eee;
-    border: 1px solid #ddd
+    background: var(--a-chip);
+    border: 1px solid var(--a-bd)
 }
 
 @media(max-width:900px) {
@@ -377,20 +396,76 @@ dialog::backdrop {
 }
 
 /* ---------- variantes (sub-filas por color) ---------- */
-tr.vr td { background: #fafbfc }
-tr.vr td.rn { box-shadow: inset 3px 0 0 #1a73e8; color: #1a73e8; background: #f1f6fe }
-tr.pr td { border-bottom-color: #d3d6d9 }
+tr.vr td { background: var(--a-sub) }
+tr.vr td.rn { box-shadow: inset 3px 0 0 var(--a-blue); color: var(--a-blue); background: var(--a-subrn) }
+tr.pr td { border-bottom-color: var(--a-bd3) }
 tr.pr td:not(.rn):not(.sel) { font-weight: 500 }
-tr.vr td.mu { color: #a8adb2; font-weight: 400; font-size: .75rem }
-tr.vr td.sb { background: #f3f4f5; cursor: default }
-td.der { color: #5f6368; font-style: italic; background: #fbfbfb; cursor: default }
-td.der.ns { background: repeating-linear-gradient(45deg, #f6f6f6 0 5px, #fff 5px 10px) }
+tr.vr td.mu { color: var(--a-mut3); font-weight: 400; font-size: .75rem }
+tr.vr td.sb { background: var(--a-sb); cursor: default }
+td.der { color: var(--a-mut); font-style: italic; background: var(--a-der); cursor: default }
+td.der.ns { background: repeating-linear-gradient(45deg, var(--a-st1) 0 5px, var(--a-st2) 5px 10px) }
 td.cl { font-weight: 600 }
-.mi { margin: 0 0 6px; color: #5f6368; font-size: .85rem }
-.mg { margin-top: 10px; padding: 8px 10px; background: #f8f9fa; border: 1px solid #e2e3e3 }
-.mg p { margin: 0 0 6px; font-size: .8rem; color: #444 }
-.mg .mp button { padding: 0; border: 1px solid #c4c7c5; background: #fff; cursor: pointer }
-.mg .mp button:hover { border-color: #1a73e8; outline: 2px solid #1a73e8 }
+.mi { margin: 0 0 6px; color: var(--a-mut); font-size: .85rem }
+.mg { margin-top: 10px; padding: 8px 10px; background: var(--a-soft); border: 1px solid var(--a-bd) }
+.mg p { margin: 0 0 6px; font-size: .8rem; color: var(--a-th2) }
+.mg .mp button { padding: 0; border: 1px solid var(--a-bd2); background: var(--a-bg); cursor: pointer }
+.mg .mp button:hover { border-color: var(--a-blue); outline: 2px solid var(--a-blue) }
 td.ax { white-space: nowrap }
 
 [hidden] { display: none !important }
+
+/* ---------- carga masiva ---------- */
+#bk { width: min(1320px, 98vw); height: 94vh; padding: 0 }
+#bk[open] { display: flex; flex-direction: column }
+#bk label { margin: 0 }
+.bk-top { display: flex; align-items: center; gap: 14px; padding: 10px 16px; border-bottom: 1px solid var(--a-bd); flex-wrap: wrap }
+.bk-top h2 { margin: 0 } .bk-top .mi { flex: 1; margin: 0; min-width: 240px }
+.bk-body { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(280px, 380px) 1fr }
+.bk-izq, .bk-der { overflow: auto; min-height: 0 }
+.bk-izq { border-right: 1px solid var(--a-bd); padding: 10px; background: var(--a-soft) }
+.bk-der { padding: 4px 10px 14px }
+.bk-bar, .bk-acc { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px }
+.bk-bar input { display: inline; width: auto }
+.bk-add { background: var(--a-btn); color: var(--a-btn-fg); padding: 7px 12px; cursor: pointer }
+.bk-th { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 6px }
+.bk-f { position: relative; padding: 0; aspect-ratio: 4/5; overflow: hidden; background: var(--a-chip); border: 2px solid transparent }
+.bk-f img { width: 100%; height: 100%; object-fit: cover; display: block }
+.bk-f.as img { opacity: .4 } .bk-f.on { border-color: var(--a-blue); box-shadow: 0 0 0 2px #1a73e855 } .bk-f.er { border-color: var(--a-red2) }
+.bk-b { position: absolute; left: 0; right: 0; bottom: 0; background: #000c; color: #fff; font-size: 10px; padding: 1px 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.bk-p { border: 1px solid var(--a-bd2); margin: 10px 0; padding: 10px }
+.bk-p > header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px }
+.bk-p > header .mi { flex: 1; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.bk-hb { display: flex; gap: 6px }
+.bk-g { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 6px 10px; margin-bottom: 8px }
+.bk-g label { font-size: .75rem; color: var(--a-mut) }
+.bk-p details { margin: 6px 0; padding: 6px 10px }
+.bk-v { display: grid; grid-template-columns: 130px auto 1fr auto; gap: 8px; align-items: center; border-top: 1px dashed var(--a-bd3); padding: 8px 0 }
+.bk-st { display: flex; gap: 3px } .bk-st input { width: 46px; padding: 6px 2px; text-align: center }
+.bk-fs { display: flex; gap: 4px; flex-wrap: wrap; align-items: center }
+.bk-m { position: relative } .bk-m img { width: 44px; height: 55px; object-fit: cover; display: block; border: 1px solid var(--a-bd) }
+.bk-m button { position: absolute; top: 0; right: 0; padding: 0 4px; font-size: 12px; line-height: 16px; background: #000c; border: 0 }
+.bk-vb { display: flex; gap: 4px }
+.bk-pie { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-top: 1px solid var(--a-bd); flex-wrap: wrap }
+.bk-pie progress { width: 160px } #bk-st { flex: 1; font-size: .8rem; min-width: 200px } #bk-st.err { color: var(--a-red4); font-weight: 500 }
+#bk .bad { outline: 2px solid var(--a-red2); background: var(--a-redbg) }
+#bk button:disabled { opacity: .4; cursor: not-allowed }
+@media(max-width:900px) { .bk-body { grid-template-columns: 1fr; overflow: auto } .bk-izq, .bk-der { overflow: visible } .bk-v { grid-template-columns: 1fr } }
+
+/* ---------- ver todas las publicaciones ---------- */
+#pb { width: min(1180px, 98vw); height: 94vh; padding: 0 }
+#pb[open] { display: flex; flex-direction: column }
+#pb label { margin: 0 }
+#pb .bad { outline: 2px solid var(--a-red2); background: var(--a-redbg) }
+#pb button:disabled { opacity: .4; cursor: not-allowed }
+.pb-tb { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 10px 16px; border-bottom: 1px solid var(--a-bd) }
+.pb-tb input { max-width: 340px } .pb-tb select { width: auto }
+.pb-msg { font-size: .8rem; color: var(--a-mut) } .pb-msg.err { color: var(--a-red4); font-weight: 500 }
+.pb-list { flex: 1; min-height: 0; overflow: auto; padding: 4px 16px 14px }
+.pb-p > header b { font-variant-numeric: tabular-nums }
+.pb-fg { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 6px 0; padding: 6px 0; border-top: 1px dashed var(--a-bd3) }
+.pb-fg > span.mi { margin: 0 }
+.pb-mas { display: block; margin: 12px auto }
+@media(max-width:900px) { .pb-tb input { max-width: none; flex: 1 1 100% } }
+.pb-p > header { flex-wrap: wrap }
+.pb-p > header .bk-hb { flex-wrap: wrap }
+@media(max-width:700px) { .pb-p > header .mi { flex: 1 1 100%; order: 3; white-space: normal } #pb .bk-pie > .mi { display: none } #pb .bk-pie { justify-content: flex-end } }

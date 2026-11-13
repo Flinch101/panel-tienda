@@ -6,7 +6,7 @@
 
 fieldset {
     border: 0;
-    border-top: 1px solid #000;
+    border-top: 1px solid var(--fg);
     padding: 10px 0;
     margin-bottom: 8px
 }
@@ -25,7 +25,9 @@ label {
 #f2 input[type=number] {
     width: 48%;
     padding: 6px;
-    border: 1px solid #000
+    border: 1px solid var(--fg);
+    background: var(--bg);
+    color: var(--fg)
 }
 
 @media(max-width:700px) {

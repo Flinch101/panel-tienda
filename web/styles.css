@@ -4,5 +4,5 @@
 }
 
 .hero p {
-    color: #555
+    color: var(--mut)
 }

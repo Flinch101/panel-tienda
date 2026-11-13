@@ -157,7 +157,7 @@ function cell(row, col, j) {
   else if (!sub && esDerivada(k) && !SZ.includes(k)) { cl.push("der"); inner = esc(v) }
   else if (k === "estado") inner = `<span class="chip ${esc(v)}">${esc(v)}</span>`;
   else if (k === "precio") inner = v === "" ? "" : "$ " + Number(v).toLocaleString("es-AR");
-  else if (k === "fotos") inner = v ? "📷 " + v.split("\n").length : `<span class="mut">—</span>`;
+  else if (k === "fotos") inner = v ? v.split("\n").length + (v.split("\n").length === 1 ? " foto" : " fotos") : `<span class="mut">—</span>`;
   else inner = esc(k === "descripcion" ? v.replace(/\n/g, " ") : v);
   if (sub && k === "color") cl.push("cl");
   if (malo(row) && (sub ? k === "color" : (col.req && (k === "nombre" ? !v.trim() : v === "")))) cl.push("bad");

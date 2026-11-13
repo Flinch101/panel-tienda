@@ -7,6 +7,7 @@
     <meta name="robots" content="noindex,nofollow">
     <title>Panel de productos</title>
     <link rel="icon" type="image/png" href="../logo.png">
+    <script src="../assets/theme.js"></script>
     <link rel="stylesheet" href="admin.css">
 </head>
 
@@ -20,9 +21,12 @@
         <div class="ac">
             <button type="button" id="un" class="alt" title="Deshacer (Ctrl+Z)">↶</button>
             <button type="button" id="re" class="alt" title="Rehacer (Ctrl+Y)">↷</button>
+            <button type="button" id="masivo" class="alt">Carga masiva</button>
+            <button type="button" id="todas" class="alt">Ver todas las publicaciones</button>
             <button type="button" id="nuevo" class="alt">+ Producto nuevo</button>
             <button type="button" id="dl" class="alt">Descargar JSON</button>
             <button type="button" id="pub">Publicar cambios (commit)</button>
+            <span data-theme-slot></span>
         </div>
     </header>
     <main>
@@ -77,7 +81,60 @@
         <div class="act"><button type="button" class="alt" id="mc">Cancelar</button><button type="button"
                 id="mo">Aceptar</button></div>
     </dialog>
+    <dialog id="bk">
+        <div class="bk-top">
+            <h2>Carga masiva de productos</h2>
+            <span class="mi">1) Agregá fotos · 2) elegí las de un mismo color y creá el producto (o asignalas a un color) · 3) completá los datos · 4) confirmá: recién ahí se pasan a WebP y se suben.</span>
+            <button type="button" class="alt" id="bk-x">Cerrar</button>
+        </div>
+        <div class="bk-body">
+            <section class="bk-izq" id="bk-izq">
+                <div class="bk-bar">
+                    <label class="bk-add">+ Agregar fotos<input type="file" id="bk-file" accept="image/*" multiple hidden></label>
+                    <label><input type="checkbox" id="bk-solo"> Solo sin asignar</label>
+                    <button type="button" class="alt" id="bk-todas">Elegir sin asignar</button>
+                </div>
+                <p class="mi" id="bk-sel"></p>
+                <div class="bk-acc">
+                    <button type="button" id="bk-crear">Crear producto con las elegidas</button>
+                    <button type="button" class="alt" id="bk-quitar">Quitar de la lista</button>
+                </div>
+                <div id="bk-th" class="bk-th"></div>
+            </section>
+            <section class="bk-der">
+                <div id="bk-ps"></div>
+                <button type="button" class="alt" id="bk-np">+ Producto vacío</button>
+            </section>
+        </div>
+        <div class="bk-pie">
+            <label><input type="checkbox" id="bk-pub" checked> Publicar también el JSON (commit) al terminar</label>
+            <progress id="bk-prog" hidden></progress>
+            <span id="bk-st"></span>
+            <button type="button" class="alt" id="bk-desc">Descartar todo</button>
+            <button type="button" id="bk-ok">Confirmar y subir</button>
+        </div>
+    </dialog>
+    <dialog id="pb">
+        <div class="bk-top">
+            <h2>Todas las publicaciones</h2>
+            <span class="mi" id="pb-cnt"></span>
+            <button type="button" class="alt" id="pb-x">Cerrar</button>
+        </div>
+        <div class="pb-tb">
+            <input id="pb-s" type="search" placeholder="Buscar por nombre, código, marca, color…" aria-label="Buscar">
+            <select id="pb-cat" aria-label="Categoría"><option value="">Todas las categorías</option></select>
+            <select id="pb-est" aria-label="Estado"><option value="">Todos los estados</option><option>Publicado</option><option>Borrador</option><option>Oculto</option></select>
+            <span id="pb-msg" class="pb-msg" role="status"></span>
+        </div>
+        <div class="pb-list" id="pb-list"></div>
+        <div class="bk-pie">
+            <span class="mi" style="flex:1;margin:0">Los cambios se aplican al instante en la tabla. Para que se vean en la tienda, cerrá esta ventana y tocá “Publicar cambios (commit)”.</span>
+            <button type="button" id="pb-ok">Listo</button>
+        </div>
+    </dialog>
     <script src="admin.js"></script>
+    <script src="masivo.js"></script>
+    <script src="publicaciones.js"></script>
 </body>
 
 </html>
