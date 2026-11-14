@@ -2,6 +2,13 @@
   const R = document.body.dataset.root || "", C = CONFIG, $ = (s, e = document) => e.querySelector(s);
   const money = n => "$" + Number(n).toLocaleString("es-AR");
   const wa = t => `https://wa.me/${C.whatsapp}?text=${encodeURIComponent(t)}`;
+  /* Google Analytics 4: solo se activa si config.js tiene el ID, y no cuenta tus visitas locales (localhost). Admin y personalizar no lo cargan. */
+  if (C.analytics && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+    window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments) }; gtag("js", new Date()); gtag("config", C.analytics);
+    const g = document.createElement("script"); g.async = true; g.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(C.analytics); document.head.appendChild(g);
+  }
+  const ev = (n, o) => { try { window.gtag && gtag("event", n, o || {}) } catch (e) { } };
+  const item = (p, t, c, q) => ({ item_id: p.id, item_name: p.nombre, item_variant: [c, t].filter(Boolean).join(" / "), item_category: p.categoria, price: p.precio, quantity: q || 1 });
   const line = i => `HOLA QUIERO ESTE PRODUCTO ${i.n}, TALLE ${i.t}, COLOR ${i.c}` + (i.p ? `\nCantidad: ${i.q}\nPrecio: ${money(i.p * i.q)}` : "");
   const order = a => "¡Hola! Quiero hacer este pedido:\n\n" + a.map((i, k) => `${k + 1}) ${i.n}\n    Talle: ${i.t} | Color: ${i.c}\n    ${i.q} x ${money(i.p)} = ${money(i.p * i.q)}`).join("\n\n") + `\n\nTOTAL: ${money(a.reduce((s, i) => s + i.p * i.q, 0))}\n\n--- Datos para coordinar el envío (completá acá) ---\nNombre: \nLocalidad y dirección: \nEnvío o retiro en el local: \nForma de pago: \nComentarios: `;
   /* Variantes: cada color tiene sus propios talles/stock y sus propias fotos.
@@ -20,7 +27,7 @@
   const sz = (p, c) => ord(vars(p).filter(v => c == null || v.color === c).flatMap(v => Object.keys(v.stock).filter(t => v.stock[t] !== 0)));
   const stk = (p, c, t) => { const v = vars(p).find(v => v.color === c); return v && v.stock[t] != null ? v.stock[t] : 0 };
   const fotosDe = (p, c) => { const v = vars(p).find(v => v.color === c); return [...new Map([...(v ? v.fotos : []), ...(p.fotos || [])].map(f => [String(f).split("/").pop().toLowerCase(), f])).values()] };
-  function add(p, t, c, q) { const f = cart.find(i => i.id === p.id && i.t === t && i.c === c); f ? f.q += q : cart.push({ id: p.id, n: p.nombre, t, c, p: p.precio, q }); save(); $("#cart").classList.add("on") }
+  function add(p, t, c, q) { ev("add_to_cart", { currency: "ARS", value: p.precio * q, items: [item(p, t, c, q)] }); const f = cart.find(i => i.id === p.id && i.t === t && i.c === c); f ? f.q += q : cart.push({ id: p.id, n: p.nombre, t, c, p: p.precio, q }); save(); $("#cart").classList.add("on") }
   /* Fotos: se prueban varias fuentes en orden (C.fotos puede ser un texto o una lista). Si una falla (por ejemplo jsDelivr cuando el repo pasa los 50 MB),
      se pasa a la siguiente y se recuerda cuál anda por unas horas. Al final, la carpeta fotos/ del propio sitio y por último el logo. */
   const BASES = (Array.isArray(C.fotos) ? C.fotos : [C.fotos]).filter(Boolean).concat([R + "fotos/"]);
@@ -71,7 +78,9 @@
   }
   document.addEventListener("click", e => {
     const x = e.target;
-    if (x.closest("#cb")) $("#cart").classList.add("on");
+    if (x.closest("#cb")) { $("#cart").classList.add("on"); ev("view_cart") }
+    if (x.closest("#cw") && cart.length) ev("begin_checkout", { currency: "ARS", value: cart.reduce((a, i) => a + i.p * i.q, 0), items: cart.map(i => ({ item_id: i.id, item_name: i.n, item_variant: [i.c, i.t].filter(Boolean).join(" / "), price: i.p, quantity: i.q })) });
+    if (x.closest(".fab")) ev("generate_lead", { method: "whatsapp_boton_flotante" });
     if (x.closest("#cx")) $("#cart").classList.remove("on");
     if (x.dataset.r) { cart.splice(x.dataset.r, 1); save() }
     if (x.dataset.q) { const [k, d] = x.dataset.q.split(":"); cart[k].q += +d; if (cart[k].q < 1) cart.splice(k, 1); save() }
@@ -81,7 +90,7 @@
     if (a && x.closest(".card")) {
       const c = x.closest(".card"), p = all.find(p => p.id === c.dataset.id); if (!p) return;
       const col = c.dataset.col, ts = sz(p, col); if (!ts.length) return;
-      const ir = t => a === "wa" ? window.open(wa(line({ n: p.nombre, t, c: col, q: 1, p: p.precio })), "_blank") : add(p, t, col, 1);
+      const ir = t => a === "wa" ? (ev("generate_lead", { method: "whatsapp", currency: "ARS", value: p.precio, items: [item(p, t, col, 1)] }), window.open(wa(line({ n: p.nombre, t, c: col, q: 1, p: p.precio })), "_blank")) : add(p, t, col, 1);
       ts.length === 1 && todosTalles(p, col).filter(t => stk(p, col, t) > 0).length === 1 ? ir(ts[0]) : pedirTalle(p, col, ir);
     }
   });
@@ -101,7 +110,7 @@
     const colores = cs.length > 1 ? `<div class="cl" role="group" aria-label="Colores">${cs.map(c => `<button type="button" class="cc${c === c0 ? " on" : ""}${sz(p, c).length ? "" : " ns"}" data-c="${attr(c)}">${attr(c)}</button>`).join("")}</div>` : "";
     return `<article class="card" data-id="${p.id}" data-col="${attr(c0)}"><a href="${pu(p)}${cs.length > 1 ? "&color=" + encodeURIComponent(c0) : ""}">${img(fotosDe(p, c0)[0], attr(p.nombre))}<h3>${p.nombre}</h3></a><p class="sub">${p.descripcionCorta || ""}</p><b>${money(p.precio)}</b>${p.cuotas && p.cuotas.tiene ? `<small>${p.cuotas.detalle || ""}</small>` : ""}${colores}<button data-a="add"${off}>Agregar al carrito</button><button class="alt" data-a="wa"${off}>Pedir por WhatsApp</button></article>`;
   };
-  window.T = { load, card, sz, ord, cols, vars, stk, fotosDe, img, add, line, money, wa, TL, fe, setImg, src: foto, primerosConStock, hayStock, attr };
+  window.T = { load, card, sz, ord, cols, vars, stk, fotosDe, img, add, line, money, wa, ev, item, TL, fe, setImg, src: foto, primerosConStock, hayStock, attr };
   [C.json, ...[].concat(C.fotos)].forEach(u => { try { document.head.insertAdjacentHTML("beforeend", `<link rel="preconnect" href="${new URL(u).origin}">`) } catch (e) { } });
   draw();
 })();

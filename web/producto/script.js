@@ -2,6 +2,7 @@
     const $ = s => document.querySelector(s), q = new URLSearchParams(location.search), id = q.get("id"), ps = await T.load(), p = ps.find(x => x.id === id);
     if (!p) { $("#pd").innerHTML = `<p>No encontramos este producto. <a href="../productos/">Ver todos los productos</a></p>`; $("#rh").hidden = true; return }
     document.title = p.nombre;
+    T.ev("view_item", { currency: "ARS", value: p.precio, items: [T.item(p, "", "", 1)] });
     const attr = T.attr, esc = s => String(s || "").trim().replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\r/g, "");
     const vs = T.vars(p), cs = vs.map(v => v.color), unico = cs.length === 1 && cs[0] === "Único";
     const stockDe = c => T.sz(p, c).length > 0;
@@ -98,7 +99,7 @@ ${unico ? "" : `<div class="opt"><div class="ol">Color: <b id="colnom"></b></div
     n.onchange = up; $("#m").onclick = () => { n.value = +n.value - 1; up() }; $("#pl").onclick = () => { n.value = +n.value + 1; up() };
     const it = () => ({ n: p.nombre, t: tal, c: col, q: +n.value, p: p.precio });
     $("#ad").onclick = () => tal && T.add(p, tal, col, +n.value);
-    $("#wp").onclick = () => tal && window.open(T.wa(T.line(it())), "_blank");
+    $("#wp").onclick = () => { if (!tal) return; T.ev("generate_lead", { method: "whatsapp", currency: "ARS", value: p.precio * +n.value, items: [T.item(p, tal, col, +n.value)] }); window.open(T.wa(T.line(it())), "_blank") };
     const rel = ps.filter(x => x.id !== p.id).sort((a, b) => (b.categoria === p.categoria) - (a.categoria === p.categoria) || (b.subcategoria === p.subcategoria) - (a.subcategoria === p.subcategoria));
     const rel4 = T.primerosConStock(rel).slice(0, 4);
     $("#rel").innerHTML = rel4.map(x => T.card(x)).join(""); $("#rh").hidden = !rel4.length;
